@@ -493,7 +493,7 @@
                             
                             <div class="space-y-4">
                                 <a 
-                                    href="https://wa.me/6282239520402?text=Halo%20Bapak%20Petrus,%20saya%20ingin%20bertanya%20tentang%20Rukun%20Santa%20Theresia" 
+                                    href="https://wa.me/6281234567890?text=Halo%20Bapak%20Petrus,%20saya%20ingin%20bertanya%20tentang%20Rukun%20Santa%20Theresia" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                     class="group inline-flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
@@ -1568,11 +1568,22 @@ Terima kasih dan Tuhan memberkati! 🙏`;
                                 // Update global data
                                 jadwalData = newJadwalData;
                                 
-                                // Sort data by date (ascending - soonest first)
+                                // Sort data by date (ascending - soonest first) - handle various date formats
                                 jadwalData.sort((a, b) => {
-                                    const dateA = new Date(a.tanggal);
-                                    const dateB = new Date(b.tanggal);
-                                    return dateA - dateB;
+                                    try {
+                                        const dateA = new Date(a.tanggal);
+                                        const dateB = new Date(b.tanggal);
+                                        
+                                        // If both dates are valid, sort by date
+                                        if (!isNaN(dateA.getTime()) && !isNaN(dateB.getTime())) {
+                                            return dateA - dateB;
+                                        }
+                                        // If dates are invalid, sort alphabetically
+                                        return a.tanggal.localeCompare(b.tanggal);
+                                    } catch (error) {
+                                        // Fallback to alphabetical sorting if date parsing fails
+                                        return a.tanggal.localeCompare(b.tanggal);
+                                    }
                                 });
                                 
                                 console.log('📅 Total jadwal:', jadwalData.length);
@@ -1698,14 +1709,9 @@ Terima kasih dan Tuhan memberkati! 🙏`;
                         
                         // Validate required fields - must have tanggal, waktu, and tempat at minimum
                         if (item.tanggal && item.waktu && item.tempat) {
-                            // Validate date format
-                            const testDate = new Date(item.tanggal);
-                            if (!isNaN(testDate.getTime())) {
-                                data.push(item);
-                                console.log(`✅ Added item ${i} to data successfully`);
-                            } else {
-                                console.log(`❌ Skipped item ${i} - invalid date format:`, item.tanggal);
-                            }
+                            // Accept any date format from database - no validation needed
+                            data.push(item);
+                            console.log(`✅ Added item ${i} to data successfully with original date format:`, item.tanggal);
                         } else {
                             console.log(`❌ Skipped item ${i} - missing required fields:`, {
                                 tanggal: !!item.tanggal,
@@ -1761,81 +1767,20 @@ Terima kasih dan Tuhan memberkati! 🙏`;
             return result;
         }
         
-        // Format date from Google Sheets format to YYYY-MM-DD
+        // Keep original date format from database - no conversion needed
         function formatDateFromSheet(dateString) {
             if (!dateString) {
                 console.log('❌ Empty date string');
                 return '';
             }
             
-            console.log('📅 Formatting date:', dateString);
+            console.log('📅 Keeping original date format from database:', dateString);
             
-            // Handle various date formats that might come from Google Sheets
-            try {
-                let date;
-                
-                // Remove any quotes that might be around the date
-                const cleanDateString = dateString.replace(/['"]/g, '').trim();
-                console.log('📅 Cleaned date string:', cleanDateString);
-                
-                // Try parsing as-is first (handles ISO format, etc.)
-                date = new Date(cleanDateString);
-                console.log('📅 Direct parse result:', date, 'Valid:', !isNaN(date.getTime()));
-                
-                // If invalid, try DD/MM/YYYY format
-                if (isNaN(date.getTime())) {
-                    const parts = cleanDateString.split('/');
-                    if (parts.length === 3) {
-                        // Assume DD/MM/YYYY format
-                        const day = parseInt(parts[0]);
-                        const month = parseInt(parts[1]) - 1; // Month is 0-indexed
-                        const year = parseInt(parts[2]);
-                        date = new Date(year, month, day);
-                        console.log('📅 DD/MM/YYYY parse result:', date, 'Valid:', !isNaN(date.getTime()));
-                    }
-                }
-                
-                // If still invalid, try DD-MM-YYYY format
-                if (isNaN(date.getTime())) {
-                    const parts = cleanDateString.split('-');
-                    if (parts.length === 3) {
-                        // Check if it's DD-MM-YYYY or YYYY-MM-DD
-                        if (parts[0].length === 4) {
-                            // YYYY-MM-DD format
-                            date = new Date(parts[0], parts[1] - 1, parts[2]);
-                        } else {
-                            // DD-MM-YYYY format
-                            date = new Date(parts[2], parts[1] - 1, parts[0]);
-                        }
-                        console.log('📅 DD-MM-YYYY parse result:', date, 'Valid:', !isNaN(date.getTime()));
-                    }
-                }
-                
-                // If still invalid, try MM/DD/YYYY format (US format)
-                if (isNaN(date.getTime())) {
-                    const parts = cleanDateString.split('/');
-                    if (parts.length === 3) {
-                        // Try MM/DD/YYYY format
-                        const month = parseInt(parts[0]) - 1;
-                        const day = parseInt(parts[1]);
-                        const year = parseInt(parts[2]);
-                        date = new Date(year, month, day);
-                        console.log('📅 MM/DD/YYYY parse result:', date, 'Valid:', !isNaN(date.getTime()));
-                    }
-                }
-                
-                // Return in YYYY-MM-DD format if valid
-                if (!isNaN(date.getTime())) {
-                    const formatted = date.toISOString().split('T')[0];
-                    console.log('✅ Successfully formatted date:', cleanDateString, '->', formatted);
-                    return formatted;
-                }
-            } catch (error) {
-                console.error('❌ Error parsing date:', dateString, error);
-            }
+            // Remove any quotes that might be around the date and return as-is
+            const cleanDateString = dateString.replace(/['"]/g, '').trim();
+            console.log('✅ Using original date format from database:', cleanDateString);
             
-            console.log('❌ Failed to parse date, returning original:', dateString);
-            return dateString; // Return original if parsing fails
+            return cleanDateString; // Return original format from database
         }
         
         // Handle jadwal loading errors
@@ -2120,38 +2065,74 @@ Tuhan memberkati! 🙏🌹`;
         }
         
         function formatTanggalDesktop(dateString) {
-            const date = new Date(dateString);
-            const options = { 
-                day: 'numeric', 
-                month: 'long', 
-                year: 'numeric' 
-            };
-            return date.toLocaleDateString('id-ID', options);
+            // Try to parse the date, if it fails, return the original string
+            try {
+                const date = new Date(dateString);
+                if (!isNaN(date.getTime())) {
+                    const options = { 
+                        day: 'numeric', 
+                        month: 'long', 
+                        year: 'numeric' 
+                    };
+                    return date.toLocaleDateString('id-ID', options);
+                }
+            } catch (error) {
+                console.log('Date parsing failed, using original format:', dateString);
+            }
+            // Return original format if parsing fails
+            return dateString;
         }
         
         function formatTanggalTablet(dateString) {
-            const date = new Date(dateString);
-            const options = { 
-                day: 'numeric', 
-                month: 'short', 
-                year: 'numeric' 
-            };
-            return date.toLocaleDateString('id-ID', options);
+            // Try to parse the date, if it fails, return the original string
+            try {
+                const date = new Date(dateString);
+                if (!isNaN(date.getTime())) {
+                    const options = { 
+                        day: 'numeric', 
+                        month: 'short', 
+                        year: 'numeric' 
+                    };
+                    return date.toLocaleDateString('id-ID', options);
+                }
+            } catch (error) {
+                console.log('Date parsing failed, using original format:', dateString);
+            }
+            // Return original format if parsing fails
+            return dateString;
         }
         
         function formatTanggalMobile(dateString) {
-            const date = new Date(dateString);
-            const options = { 
-                day: 'numeric', 
-                month: 'short'
-            };
-            return date.toLocaleDateString('id-ID', options);
+            // Try to parse the date, if it fails, return the original string
+            try {
+                const date = new Date(dateString);
+                if (!isNaN(date.getTime())) {
+                    const options = { 
+                        day: 'numeric', 
+                        month: 'short'
+                    };
+                    return date.toLocaleDateString('id-ID', options);
+                }
+            } catch (error) {
+                console.log('Date parsing failed, using original format:', dateString);
+            }
+            // Return original format if parsing fails
+            return dateString;
         }
         
         function getHariIndonesia(dateString) {
-            const date = new Date(dateString);
-            const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-            return days[date.getDay()];
+            // Try to parse the date, if it fails, return empty string
+            try {
+                const date = new Date(dateString);
+                if (!isNaN(date.getTime())) {
+                    const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+                    return days[date.getDay()];
+                }
+            } catch (error) {
+                console.log('Date parsing failed for day calculation:', dateString);
+            }
+            // Return empty string if parsing fails
+            return '';
         }
         
         function isUpcomingEvent(dateString) {
@@ -2588,5 +2569,5 @@ Terima kasih dan Tuhan memberkati! 🙏🌹`;
             }
         }
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98ed16e836a1ce6a',t:'MTc2MDUwNzk1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98ed254855949e1e',t:'MTc2MDUwODU0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
