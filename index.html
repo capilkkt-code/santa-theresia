@@ -693,14 +693,14 @@
                     
                     <div class="bg-white rounded-lg shadow-lg p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 md:mb-8">
                         <!-- Database Status Indicator -->
-                        <div class="mb-4 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
+                        <div id="database-status" class="mb-4 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center space-x-2">
-                                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                                    <span class="text-sm font-medium text-blue-800">🔗 Terhubung ke Google Sheets</span>
+                                    <div id="status-indicator" class="w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
+                                    <span id="status-text" class="text-sm font-medium text-blue-800">🔄 Menghubungkan ke Google Sheets...</span>
                                 </div>
                                 <div class="text-xs text-blue-600">
-                                    Data otomatis terupdate
+                                    Data real-time dari spreadsheet
                                 </div>
                             </div>
                             <div class="mt-2 text-xs text-blue-700">
@@ -1852,166 +1852,136 @@ Terima kasih dan Tuhan memberkati! 🙏`;
             contentEl.classList.add('hidden');
             errorEl.classList.add('hidden');
             
+            // Update status to connecting
+            updateDatabaseStatus('connecting', 'Mengambil data dari Google Sheets...');
+            
             // Google Sheets CSV URL - URL yang Anda berikan
             const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRSRRyYreHCXXuAXvr9DaTnevZgfO7Gv4thZ6txx2TJ_SUabpn1K1i1Pz2GJOnh9O7cWuoCEsiY0uxM/pub?gid=426833283&single=true&output=csv';
             
             console.log('🔄 Mengambil data dari Google Sheets...', csvUrl);
             
-            // Fetch data from Google Sheets dengan cache busting dan CORS handling
-            const cacheBuster = new Date().getTime();
-            const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(csvUrl + '&_=' + cacheBuster)}`;
-            
-            fetch(proxyUrl)
-                .then(response => {
-                    console.log('📡 Response status:', response.status);
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const csvText = data.contents;
-                    console.log('📄 CSV data received, length:', csvText.length);
-                    console.log('📄 First 200 chars:', csvText.substring(0, 200));
-                    
-                    // Parse CSV data
-                    jadwalData = parseCSVData(csvText);
-                    console.log('✅ Parsed data count:', jadwalData.length);
-                    
-                    if (jadwalData.length === 0) {
-                        // Try fallback with sample data if no data found
-                        console.log('⚠️ No data found, using sample data');
-                        jadwalData = getSampleJadwalData();
-                    }
-                    
-                    // Sort data by date (ascending - soonest first)
-                    jadwalData.sort((a, b) => {
-                        const dateA = new Date(a.tanggal);
-                        const dateB = new Date(b.tanggal);
-                        return dateA - dateB;
-                    });
-                    
-                    // Filter out past dates (hanya tampilkan jadwal hari ini dan ke depan)
-                    const today = new Date();
-                    today.setHours(0, 0, 0, 0);
-                    const upcomingData = jadwalData.filter(item => {
-                        const itemDate = new Date(item.tanggal);
-                        return itemDate >= today;
-                    });
-                    
-                    console.log('📅 Upcoming events:', upcomingData.length);
-                    
-                    // Apply category filter if active
-                    const kategoriFilter = document.getElementById('kategori-filter').value;
-                    const filteredData = kategoriFilter ? 
-                        upcomingData.filter(item => item.kategori === kategoriFilter) : 
-                        upcomingData;
-                    
-                    renderJadwal(filteredData);
-                    
-                    loadingEl.classList.add('hidden');
-                    contentEl.classList.remove('hidden');
-                    
-                    // Update last refresh time
-                    updateLastRefreshTime();
-                    
-                    // Show success message
-                    console.log('✅ Data berhasil dimuat dari Google Sheets');
-                })
-                .catch(error => {
-                    console.error('❌ Error loading jadwal data:', error);
-                    
-                    // Try direct fetch as fallback
-                    console.log('🔄 Trying direct fetch as fallback...');
-                    fetch(csvUrl + '&_=' + new Date().getTime())
-                        .then(response => response.text())
-                        .then(csvText => {
-                            jadwalData = parseCSVData(csvText);
-                            if (jadwalData.length === 0) {
-                                jadwalData = getSampleJadwalData();
-                            }
-                            
-                            const today = new Date();
-                            today.setHours(0, 0, 0, 0);
-                            const upcomingData = jadwalData.filter(item => {
-                                const itemDate = new Date(item.tanggal);
-                                return itemDate >= today;
-                            });
-                            
-                            const kategoriFilter = document.getElementById('kategori-filter').value;
-                            const filteredData = kategoriFilter ? 
-                                upcomingData.filter(item => item.kategori === kategoriFilter) : 
-                                upcomingData;
-                            
-                            renderJadwal(filteredData);
-                            loadingEl.classList.add('hidden');
-                            contentEl.classList.remove('hidden');
-                            updateLastRefreshTime();
-                            console.log('✅ Fallback fetch berhasil');
+            // Multiple fallback strategies for better reliability
+            const fetchStrategies = [
+                // Strategy 1: AllOrigins proxy
+                () => {
+                    const cacheBuster = new Date().getTime();
+                    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(csvUrl + '&_=' + cacheBuster)}`;
+                    return fetch(proxyUrl)
+                        .then(response => {
+                            if (!response.ok) throw new Error(`Proxy error: ${response.status}`);
+                            return response.json();
                         })
-                        .catch(fallbackError => {
-                            console.error('❌ Fallback also failed:', fallbackError);
-                            // Use sample data as last resort
-                            jadwalData = getSampleJadwalData();
-                            renderJadwal(jadwalData);
-                            loadingEl.classList.add('hidden');
-                            contentEl.classList.remove('hidden');
-                            updateLastRefreshTime();
-                            
-                            // Show warning about using sample data
-                            const warningEl = document.createElement('div');
-                            warningEl.className = 'bg-yellow-100 border border-yellow-300 text-yellow-800 px-4 py-3 rounded-lg mb-4';
-                            warningEl.innerHTML = `
-                                <div class="flex items-center">
-                                    <span class="text-lg mr-2">⚠️</span>
-                                    <div>
-                                        <p class="font-semibold">Menggunakan Data Contoh</p>
-                                        <p class="text-sm">Tidak dapat terhubung ke database. Menampilkan jadwal contoh.</p>
-                                    </div>
-                                </div>
-                            `;
-                            contentEl.insertBefore(warningEl, contentEl.firstChild);
+                        .then(data => data.contents);
+                },
+                
+                // Strategy 2: CORS Anywhere proxy
+                () => {
+                    const cacheBuster = new Date().getTime();
+                    const corsProxyUrl = `https://cors-anywhere.herokuapp.com/${csvUrl}&_=${cacheBuster}`;
+                    return fetch(corsProxyUrl)
+                        .then(response => {
+                            if (!response.ok) throw new Error(`CORS proxy error: ${response.status}`);
+                            return response.text();
                         });
-                });
-        }
-        
-        // Sample data function for fallback
-        function getSampleJadwalData() {
-            const today = new Date();
-            const tomorrow = new Date(today);
-            tomorrow.setDate(today.getDate() + 1);
-            const nextWeek = new Date(today);
-            nextWeek.setDate(today.getDate() + 7);
-            const nextMonth = new Date(today);
-            nextMonth.setDate(today.getDate() + 14);
-            
-            return [
-                {
-                    timestamp: new Date().toISOString(),
-                    tanggal: tomorrow.toISOString().split('T')[0],
-                    waktu: '19:00',
-                    tempat: 'Gereja Santo Mathias',
-                    pemimpin: 'Rm. Pastor Paroki',
-                    kategori: 'Rosario'
                 },
-                {
-                    timestamp: new Date().toISOString(),
-                    tanggal: nextWeek.toISOString().split('T')[0],
-                    waktu: '18:30',
-                    tempat: 'Rumah Ibu Maria',
-                    pemimpin: 'Ketua Rukun',
-                    kategori: 'Bulan Maria'
-                },
-                {
-                    timestamp: new Date().toISOString(),
-                    tanggal: nextMonth.toISOString().split('T')[0],
-                    waktu: '07:00',
-                    tempat: 'Gereja Santo Mathias',
-                    pemimpin: 'Rm. Pastor Paroki',
-                    kategori: 'Misa Rukun'
+                
+                // Strategy 3: Direct fetch (might work in some browsers)
+                () => {
+                    const cacheBuster = new Date().getTime();
+                    return fetch(csvUrl + '&_=' + cacheBuster)
+                        .then(response => {
+                            if (!response.ok) throw new Error(`Direct fetch error: ${response.status}`);
+                            return response.text();
+                        });
                 }
             ];
+            
+            // Try each strategy in sequence
+            async function tryFetchStrategies() {
+                for (let i = 0; i < fetchStrategies.length; i++) {
+                    try {
+                        console.log(`🔄 Trying fetch strategy ${i + 1}...`);
+                        const csvText = await fetchStrategies[i]();
+                        
+                        if (csvText && csvText.trim().length > 0) {
+                            console.log('📄 CSV data received, length:', csvText.length);
+                            console.log('📄 First 200 chars:', csvText.substring(0, 200));
+                            
+                            // Parse CSV data
+                            jadwalData = parseCSVData(csvText);
+                            console.log('✅ Parsed data count:', jadwalData.length);
+                            
+                            if (jadwalData.length > 0) {
+                                // Sort data by date (ascending - soonest first)
+                                jadwalData.sort((a, b) => {
+                                    const dateA = new Date(a.tanggal);
+                                    const dateB = new Date(b.tanggal);
+                                    return dateA - dateB;
+                                });
+                                
+                                // Filter out past dates (hanya tampilkan jadwal hari ini dan ke depan)
+                                const today = new Date();
+                                today.setHours(0, 0, 0, 0);
+                                const upcomingData = jadwalData.filter(item => {
+                                    const itemDate = new Date(item.tanggal);
+                                    return itemDate >= today;
+                                });
+                                
+                                console.log('📅 Upcoming events:', upcomingData.length);
+                                
+                                // Apply category filter if active
+                                const kategoriFilter = document.getElementById('kategori-filter').value;
+                                const filteredData = kategoriFilter ? 
+                                    upcomingData.filter(item => item.kategori === kategoriFilter) : 
+                                    upcomingData;
+                                
+                                renderJadwal(filteredData);
+                                
+                                loadingEl.classList.add('hidden');
+                                contentEl.classList.remove('hidden');
+                                
+                                // Update status to connected
+                                updateDatabaseStatus('connected', `Berhasil memuat ${jadwalData.length} jadwal`);
+                                
+                                // Update last refresh time
+                                updateLastRefreshTime();
+                                
+                                console.log(`✅ Data berhasil dimuat dari Google Sheets (strategy ${i + 1})`);
+                                return; // Success, exit function
+                            }
+                        }
+                    } catch (error) {
+                        console.error(`❌ Strategy ${i + 1} failed:`, error);
+                        continue; // Try next strategy
+                    }
+                }
+                
+                // All strategies failed
+                throw new Error('Semua metode pengambilan data gagal');
+            }
+            
+            // Execute fetch strategies
+            tryFetchStrategies().catch(error => {
+                console.error('❌ All fetch strategies failed:', error);
+                
+                // Update status to error
+                updateDatabaseStatus('error', 'Tidak dapat terhubung ke database');
+                
+                // Show error state - NO SAMPLE DATA
+                loadingEl.classList.add('hidden');
+                contentEl.classList.add('hidden');
+                errorEl.classList.remove('hidden');
+                
+                // Update error message
+                const errorContent = errorEl.querySelector('p');
+                errorContent.textContent = 'Tidak dapat mengambil data jadwal dari Google Sheets. Pastikan koneksi internet stabil dan coba refresh halaman.';
+                
+                // Clear any existing data
+                jadwalData = [];
+            });
         }
+        
+
         
         // Parse CSV data from Google Sheets
         function parseCSVData(csvText) {
@@ -2028,10 +1998,8 @@ Terima kasih dan Tuhan memberkati! 🙏`;
                 console.log('📊 Header line:', lines[0]);
             }
             
-            // Skip header row (index 0) if it exists
-            const startIndex = lines.length > 1 ? 1 : 0;
-            
-            for (let i = startIndex; i < lines.length; i++) {
+            // Skip header row (index 0) - always skip first line as it contains headers
+            for (let i = 1; i < lines.length; i++) {
                 const line = lines[i];
                 if (!line || line.trim() === '') continue;
                 
@@ -2042,34 +2010,41 @@ Terima kasih dan Tuhan memberkati! 🙏`;
                     const columns = parseCSVLine(line);
                     console.log(`📝 Parsed columns for line ${i}:`, columns);
                     
-                    if (columns.length >= 3) { // Minimum required columns
-                        // Map columns: Timestamp, Tanggal, Waktu, Tempat Ibadah, Pemimpin Ibadah, Kategori
+                    if (columns.length >= 6) { // All 6 columns expected: Timestamp, Tanggal, Waktu, Tempat Ibadah, Pemimpin Ibadah, Kategori
+                        // Map columns exactly as specified
                         const rawDate = columns[1] ? columns[1].trim() : '';
                         const formattedDate = formatDateFromSheet(rawDate);
                         
                         const item = {
                             timestamp: columns[0] ? columns[0].trim() : '',
-                            tanggal: formattedDate || rawDate, // Use raw date if formatting fails
+                            tanggal: formattedDate || rawDate,
                             waktu: columns[2] ? columns[2].trim() : '',
-                            tempat: columns[3] ? columns[3].trim() : 'Lokasi belum ditentukan',
-                            pemimpin: columns[4] ? columns[4].trim() : 'Belum ditentukan',
-                            kategori: columns[5] ? columns[5].trim() : 'Lainnya'
+                            tempat: columns[3] ? columns[3].trim() : '',
+                            pemimpin: columns[4] ? columns[4].trim() : '',
+                            kategori: columns[5] ? columns[5].trim() : ''
                         };
                         
                         console.log(`📅 Processed item ${i}:`, item);
                         
-                        // Only add if minimum required fields are present
-                        if (item.tanggal && item.waktu) {
-                            data.push(item);
-                            console.log(`✅ Added item ${i} to data`);
+                        // Validate required fields - must have tanggal, waktu, and tempat at minimum
+                        if (item.tanggal && item.waktu && item.tempat) {
+                            // Validate date format
+                            const testDate = new Date(item.tanggal);
+                            if (!isNaN(testDate.getTime())) {
+                                data.push(item);
+                                console.log(`✅ Added item ${i} to data`);
+                            } else {
+                                console.log(`❌ Skipped item ${i} - invalid date format:`, item.tanggal);
+                            }
                         } else {
                             console.log(`❌ Skipped item ${i} - missing required fields:`, {
                                 tanggal: !!item.tanggal,
-                                waktu: !!item.waktu
+                                waktu: !!item.waktu,
+                                tempat: !!item.tempat
                             });
                         }
                     } else {
-                        console.log(`❌ Skipped line ${i} - insufficient columns (${columns.length})`);
+                        console.log(`❌ Skipped line ${i} - insufficient columns (${columns.length}/6 expected)`);
                     }
                 } catch (error) {
                     console.error(`❌ Error processing line ${i}:`, error);
@@ -2078,6 +2053,7 @@ Terima kasih dan Tuhan memberkati! 🙏`;
             }
             
             console.log('📊 Final parsed data:', data);
+            console.log(`📊 Successfully parsed ${data.length} valid entries from ${lines.length - 1} data rows`);
             return data;
         }
         
@@ -2198,6 +2174,29 @@ Terima kasih dan Tuhan memberkati! 🙏`;
             }
         }
         
+        // Update database connection status
+        function updateDatabaseStatus(status, message) {
+            const statusIndicator = document.getElementById('status-indicator');
+            const statusText = document.getElementById('status-text');
+            
+            if (statusIndicator && statusText) {
+                switch (status) {
+                    case 'connecting':
+                        statusIndicator.className = 'w-3 h-3 bg-yellow-500 rounded-full animate-pulse';
+                        statusText.textContent = '🔄 ' + (message || 'Menghubungkan ke Google Sheets...');
+                        break;
+                    case 'connected':
+                        statusIndicator.className = 'w-3 h-3 bg-green-500 rounded-full animate-pulse';
+                        statusText.textContent = '✅ ' + (message || 'Terhubung ke Google Sheets');
+                        break;
+                    case 'error':
+                        statusIndicator.className = 'w-3 h-3 bg-red-500 rounded-full animate-pulse';
+                        statusText.textContent = '❌ ' + (message || 'Gagal terhubung ke Google Sheets');
+                        break;
+                }
+            }
+        }
+        
         // Update last refresh time display
         function updateLastRefreshTime() {
             const now = new Date();
@@ -2236,6 +2235,19 @@ Terima kasih dan Tuhan memberkati! 🙏`;
                 desktopTbody.innerHTML = '';
                 mobileContainer.innerHTML = '';
                 emptyEl.classList.remove('hidden');
+                
+                // Update empty message based on filter status
+                const kategoriFilter = document.getElementById('kategori-filter').value;
+                const emptyTitle = emptyEl.querySelector('h3');
+                const emptyText = emptyEl.querySelector('p');
+                
+                if (kategoriFilter) {
+                    emptyTitle.textContent = 'Tidak Ada Jadwal untuk Kategori Ini';
+                    emptyText.textContent = `Tidak ada jadwal ibadah untuk kategori "${kategoriFilter}". Coba pilih kategori lain atau hapus filter.`;
+                } else {
+                    emptyTitle.textContent = 'Belum Ada Jadwal Terbaru';
+                    emptyText.textContent = 'Belum ada jadwal ibadah yang tersedia. Data akan otomatis muncul ketika ada jadwal baru di Google Sheets.';
+                }
                 return;
             }
             
@@ -2670,5 +2682,5 @@ Terima kasih dan Tuhan memberkati! 🙏🌹`;
             }
         }
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98eb5c3f311e55de',t:'MTc2MDQ4OTgyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98eb622ef1a755de',t:'MTc2MDQ5MDA2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
