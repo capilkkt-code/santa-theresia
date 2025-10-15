@@ -76,43 +76,43 @@
     <nav class="bg-white/90 backdrop-blur-xl shadow-2xl fixed w-full top-0 z-50 border-b-2 border-gradient-to-r from-amber-200 via-orange-200 to-rose-200">
         <div class="h-1 bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400"></div>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
-                            <span class="text-white text-xl">🌹</span>
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-18 md:h-20">
+                <div class="flex items-center min-w-0 flex-1">
+                    <div class="flex-shrink-0 flex items-center space-x-2 sm:space-x-3">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg">
+                            <span class="text-white text-lg sm:text-xl">🌹</span>
                         </div>
-                        <div>
-                            <h1 class="text-xl font-bold text-amber-700">Santa Theresia</h1>
-                            <p class="text-xs text-amber-600">Rukun Doa & Kasih</p>
+                        <div class="min-w-0">
+                            <h1 class="text-base sm:text-lg md:text-xl font-bold text-amber-700 truncate">Santa Theresia</h1>
+                            <p class="text-xs sm:text-xs text-amber-600 hidden sm:block">Dari Kanak-kanak Yesus</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="hidden md:block">
+                <div class="hidden lg:block">
                     <div class="flex items-center space-x-1">
-                        <a href="#" class="nav-link active text-amber-700 hover:text-amber-800 px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200" onclick="showPage('beranda')">
+                        <a href="#" class="nav-link active text-amber-700 hover:text-amber-800 px-3 xl:px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200" onclick="showPage('beranda')">
                             Beranda
                         </a>
-                        <a href="#" class="nav-link text-gray-600 hover:text-amber-700 px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200" onclick="showPage('tentang')">
+                        <a href="#" class="nav-link text-gray-600 hover:text-amber-700 px-3 xl:px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200" onclick="showPage('tentang')">
                             Tentang
                         </a>
-                        <a href="#" class="nav-link text-gray-600 hover:text-amber-700 px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200" onclick="showPage('jadwal')">
+                        <a href="#" class="nav-link text-gray-600 hover:text-amber-700 px-3 xl:px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200" onclick="showPage('jadwal')">
                             Jadwal
                         </a>
-                        <a href="#" class="nav-link text-gray-600 hover:text-amber-700 px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200" onclick="showPage('layanan')">
+                        <a href="#" class="nav-link text-gray-600 hover:text-amber-700 px-3 xl:px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200" onclick="showPage('layanan')">
                             Layanan
                         </a>
-                        <a href="#" class="nav-link text-gray-600 hover:text-amber-700 px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200" onclick="showPage('kontak')">
+                        <a href="#" class="nav-link text-gray-600 hover:text-amber-700 px-3 xl:px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200" onclick="showPage('kontak')">
                             Kontak
                         </a>
                     </div>
                 </div>
                 
-                <div class="md:hidden">
+                <div class="lg:hidden">
                     <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-600 hover:text-amber-700 hover:bg-amber-50 transition-colors duration-200">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
@@ -120,22 +120,22 @@
             </div>
         </div>
         
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 shadow-lg">
-            <div class="px-4 py-3 space-y-1">
-                <a href="#" class="block px-4 py-3 text-amber-700 font-medium bg-amber-50 rounded-lg" onclick="showPage('beranda'); toggleMobileMenu()">
-                    Beranda
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200 shadow-lg">
+            <div class="px-3 sm:px-4 py-3 space-y-1">
+                <a href="#" class="block px-3 sm:px-4 py-3 text-amber-700 font-medium bg-amber-50 rounded-lg text-sm sm:text-base" onclick="showPage('beranda'); toggleMobileMenu()">
+                    🏠 Beranda
                 </a>
-                <a href="#" class="block px-4 py-3 text-gray-600 hover:text-amber-700 hover:bg-amber-50 rounded-lg transition-colors duration-200" onclick="showPage('tentang'); toggleMobileMenu()">
-                    Tentang
+                <a href="#" class="block px-3 sm:px-4 py-3 text-gray-600 hover:text-amber-700 hover:bg-amber-50 rounded-lg transition-colors duration-200 text-sm sm:text-base" onclick="showPage('tentang'); toggleMobileMenu()">
+                    👥 Tentang
                 </a>
-                <a href="#" class="block px-4 py-3 text-gray-600 hover:text-amber-700 hover:bg-amber-50 rounded-lg transition-colors duration-200" onclick="showPage('jadwal'); toggleMobileMenu()">
-                    Jadwal
+                <a href="#" class="block px-3 sm:px-4 py-3 text-gray-600 hover:text-amber-700 hover:bg-amber-50 rounded-lg transition-colors duration-200 text-sm sm:text-base" onclick="showPage('jadwal'); toggleMobileMenu()">
+                    📅 Jadwal
                 </a>
-                <a href="#" class="block px-4 py-3 text-gray-600 hover:text-amber-700 hover:bg-amber-50 rounded-lg transition-colors duration-200" onclick="showPage('layanan'); toggleMobileMenu()">
-                    Layanan
+                <a href="#" class="block px-3 sm:px-4 py-3 text-gray-600 hover:text-amber-700 hover:bg-amber-50 rounded-lg transition-colors duration-200 text-sm sm:text-base" onclick="showPage('layanan'); toggleMobileMenu()">
+                    📋 Layanan
                 </a>
-                <a href="#" class="block px-4 py-3 text-gray-600 hover:text-amber-700 hover:bg-amber-50 rounded-lg transition-colors duration-200" onclick="showPage('kontak'); toggleMobileMenu()">
-                    Kontak
+                <a href="#" class="block px-3 sm:px-4 py-3 text-gray-600 hover:text-amber-700 hover:bg-amber-50 rounded-lg transition-colors duration-200 text-sm sm:text-base" onclick="showPage('kontak'); toggleMobileMenu()">
+                    💬 Kontak
                 </a>
             </div>
         </div>
@@ -146,55 +146,55 @@
         <!-- Beranda Page -->
         <div id="beranda-page" class="page-content">
             <!-- Hero Section -->
-            <section class="hero-bg min-h-screen flex items-center justify-center text-white relative overflow-hidden py-20 sm:py-16 md:py-20">
+            <section class="hero-bg min-h-screen flex items-center justify-center text-white relative overflow-hidden pt-20 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
                 <div class="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div class="absolute top-24 left-4 text-3xl sm:text-4xl md:text-6xl opacity-20 animate-pulse sm:top-20 sm:left-10">🌹</div>
-                    <div class="absolute top-32 right-4 text-2xl sm:text-3xl md:text-4xl opacity-30 animate-bounce sm:top-40 sm:right-20" style="animation-delay: 1s;">✨</div>
-                    <div class="absolute bottom-40 left-4 text-3xl sm:text-4xl md:text-5xl opacity-25 animate-pulse sm:bottom-32 sm:left-20" style="animation-delay: 2s;">🙏</div>
-                    <div class="absolute bottom-32 right-4 text-2xl sm:text-3xl opacity-20 animate-bounce sm:bottom-20 sm:right-10" style="animation-delay: 0.5s;">❤️</div>
+                    <div class="absolute top-20 left-2 text-2xl sm:text-3xl md:text-4xl lg:text-6xl opacity-20 animate-pulse sm:top-24 sm:left-4 md:left-10">🌹</div>
+                    <div class="absolute top-28 right-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl opacity-30 animate-bounce sm:top-32 sm:right-4 md:top-40 md:right-20" style="animation-delay: 1s;">✨</div>
+                    <div class="absolute bottom-32 left-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl opacity-25 animate-pulse sm:bottom-36 sm:left-4 md:bottom-32 md:left-20" style="animation-delay: 2s;">🙏</div>
+                    <div class="absolute bottom-24 right-2 text-xl sm:text-2xl md:text-3xl opacity-20 animate-bounce sm:bottom-28 sm:right-4 md:bottom-20 md:right-10" style="animation-delay: 0.5s;">❤️</div>
                 </div>
                 
-                <div class="text-center px-4 sm:px-6 max-w-5xl mx-auto relative z-10 w-full">
-                    <div class="mb-6 sm:mb-8 fade-in">
-                        <div class="inline-block p-3 sm:p-4 bg-white/10 backdrop-blur-sm rounded-full mb-4 sm:mb-6 shadow-2xl">
-                            <span class="text-4xl sm:text-5xl md:text-6xl">🌹</span>
+                <div class="text-center px-3 sm:px-4 md:px-6 max-w-6xl mx-auto relative z-10 w-full">
+                    <div class="mb-4 sm:mb-6 md:mb-8 fade-in">
+                        <div class="inline-block p-2 sm:p-3 md:p-4 bg-white/10 backdrop-blur-sm rounded-full mb-3 sm:mb-4 md:mb-6 shadow-2xl">
+                            <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">🌹</span>
                         </div>
                     </div>
                     
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 fade-in bg-gradient-to-r from-white via-amber-100 to-white bg-clip-text text-transparent leading-tight px-2">
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 fade-in bg-gradient-to-r from-white via-amber-100 to-white bg-clip-text text-transparent leading-tight px-1 sm:px-2">
                         Rukun Santa Theresia
                     </h1>
                     
-                    <div class="mb-6 sm:mb-8 fade-in">
-                        <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-2 font-light text-amber-100 px-2">Paroki Santo Mathias Saumlaki</p>
-                        <div class="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-transparent via-amber-300 to-transparent mx-auto rounded-full"></div>
+                    <div class="mb-4 sm:mb-6 md:mb-8 fade-in">
+                        <p class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-2 font-light text-amber-100 px-1 sm:px-2">Paroki Santo Mathias Saumlaki</p>
+                        <div class="w-12 sm:w-16 md:w-20 lg:w-24 h-1 bg-gradient-to-r from-transparent via-amber-300 to-transparent mx-auto rounded-full"></div>
                     </div>
                     
-                    <div class="mb-8 sm:mb-10 md:mb-12 fade-in">
-                        <p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 max-w-4xl mx-auto leading-relaxed font-light text-amber-50 px-2">
+                    <div class="mb-6 sm:mb-8 md:mb-10 lg:mb-12 fade-in">
+                        <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-3 sm:mb-4 md:mb-6 max-w-5xl mx-auto leading-relaxed font-light text-amber-50 px-1 sm:px-2">
                             Bersama dalam doa, bersatu dalam kasih, melayani dengan hati yang penuh cinta seperti Santa Theresia
                         </p>
-                        <div class="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 max-w-3xl mx-auto border border-white/20 shadow-2xl">
-                            <p class="text-sm sm:text-base md:text-lg lg:text-xl italic text-amber-100 leading-relaxed">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 max-w-4xl mx-auto border border-white/20 shadow-2xl">
+                            <p class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl italic text-amber-100 leading-relaxed">
                                 "Aku akan menghabiskan surgaku dengan berbuat baik di bumi"
                             </p>
-                            <p class="text-xs sm:text-sm md:text-base text-amber-200 mt-2 sm:mt-3 font-medium">
+                            <p class="text-xs sm:text-xs md:text-sm lg:text-base text-amber-200 mt-1 sm:mt-2 md:mt-3 font-medium">
                                 - Santa Theresia dari Kanak-kanak Yesus
                             </p>
                         </div>
                     </div>
                     
-                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center fade-in px-2">
-                        <button onclick="showPage('tentang')" class="group bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 shadow-2xl hover:shadow-amber-500/25 hover:scale-105 transform w-full sm:w-auto text-sm sm:text-base">
-                            <span class="flex items-center justify-center space-x-2">
+                    <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center items-center fade-in px-1 sm:px-2 max-w-lg sm:max-w-none mx-auto">
+                        <button onclick="showPage('tentang')" class="group bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold py-2.5 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-full transition-all duration-300 shadow-2xl hover:shadow-amber-500/25 hover:scale-105 transform w-full sm:w-auto text-xs sm:text-sm md:text-base">
+                            <span class="flex items-center justify-center space-x-1 sm:space-x-2">
                                 <span>👥 Tentang Kami</span>
-                                <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                                 </svg>
                             </span>
                         </button>
-                        <button onclick="showPage('jadwal')" class="group bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 shadow-xl hover:scale-105 transform w-full sm:w-auto text-sm sm:text-base">
-                            <span class="flex items-center justify-center space-x-2">
+                        <button onclick="showPage('jadwal')" class="group bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-semibold py-2.5 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 shadow-xl hover:scale-105 transform w-full sm:w-auto text-xs sm:text-sm md:text-base">
+                            <span class="flex items-center justify-center space-x-1 sm:space-x-2">
                                 <span>📅</span>
                                 <span>Jadwal Ibadah</span>
                             </span>
@@ -202,67 +202,67 @@
                     </div>
                 </div>
                 
-                <div class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden sm:block">
-                    <div class="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/50 rounded-full flex justify-center">
-                        <div class="w-1 h-2 sm:h-3 bg-white/70 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
+                <div class="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+                    <div class="w-4 h-6 sm:w-5 sm:h-8 md:w-6 md:h-10 border-2 border-white/50 rounded-full flex justify-center">
+                        <div class="w-1 h-1.5 sm:h-2 md:h-3 bg-white/70 rounded-full mt-1 sm:mt-1 md:mt-2 animate-pulse"></div>
                     </div>
                 </div>
             </section>
 
             <!-- Welcome Section -->
-            <section class="py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 relative overflow-hidden">
+            <section class="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 relative overflow-hidden">
                 <div class="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div class="absolute top-20 right-10 text-6xl opacity-5 animate-pulse">🌹</div>
-                    <div class="absolute bottom-20 left-10 text-5xl opacity-10 animate-bounce" style="animation-delay: 2s;">✨</div>
+                    <div class="absolute top-10 right-4 text-4xl sm:text-5xl md:text-6xl opacity-5 animate-pulse sm:top-20 sm:right-10">🌹</div>
+                    <div class="absolute bottom-10 left-4 text-3xl sm:text-4xl md:text-5xl opacity-10 animate-bounce sm:bottom-20 sm:left-10" style="animation-delay: 2s;">✨</div>
                 </div>
                 
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                    <div class="text-center mb-16">
-                        <div class="inline-block mb-6">
-                            <div class="flex items-center justify-center space-x-2 bg-gradient-to-r from-amber-100 to-orange-100 px-6 py-3 rounded-full border border-amber-200/50 shadow-lg">
-                                <span class="text-2xl">🏠</span>
-                                <span class="text-amber-800 font-semibold">Selamat Datang</span>
-                                <span class="text-2xl">❤️</span>
+                <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative">
+                    <div class="text-center mb-8 sm:mb-12 md:mb-16">
+                        <div class="inline-block mb-4 sm:mb-6">
+                            <div class="flex items-center justify-center space-x-1 sm:space-x-2 bg-gradient-to-r from-amber-100 to-orange-100 px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-full border border-amber-200/50 shadow-lg">
+                                <span class="text-lg sm:text-xl md:text-2xl">🏠</span>
+                                <span class="text-amber-800 font-semibold text-sm sm:text-base">Selamat Datang</span>
+                                <span class="text-lg sm:text-xl md:text-2xl">❤️</span>
                             </div>
                         </div>
                         
-                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2">
                             Keluarga Besar <span class="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">Santa Theresia</span>
                         </h2>
                         
-                        <p class="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                        <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed px-2">
                             Kami mengundang Anda untuk bergabung dalam perjalanan iman yang penuh makna, 
                             mengikuti jejak langkah <strong class="text-amber-700">Santa Theresia dari Kanak-kanak Yesus</strong>
                         </p>
                     </div>
                     
-                    <div class="grid md:grid-cols-3 gap-8 mb-16">
-                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-amber-200/30 card-hover text-center">
-                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                                <span class="text-white text-3xl">🙏</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl border border-amber-200/30 card-hover text-center">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg">
+                                <span class="text-white text-xl sm:text-2xl md:text-3xl">🙏</span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Doa Bersama</h3>
-                            <p class="text-gray-600 leading-relaxed">
+                            <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">Doa Bersama</h3>
+                            <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
                                 Bergabunglah dalam doa rosario dan ibadah bersama yang memperkuat iman dan persaudaraan kita
                             </p>
                         </div>
                         
-                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-amber-200/30 card-hover text-center">
-                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                                <span class="text-white text-3xl">🤝</span>
+                        <div class="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl border border-amber-200/30 card-hover text-center">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg">
+                                <span class="text-white text-xl sm:text-2xl md:text-3xl">🤝</span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Pelayanan Kasih</h3>
-                            <p class="text-gray-600 leading-relaxed">
+                            <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">Pelayanan Kasih</h3>
+                            <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
                                 Melayani sesama dengan hati yang penuh cinta, menghadirkan kasih Kristus dalam kehidupan sehari-hari
                             </p>
                         </div>
                         
-                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-amber-200/30 card-hover text-center">
-                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                                <span class="text-white text-3xl">📖</span>
+                        <div class="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl border border-amber-200/30 card-hover text-center md:col-span-2 lg:col-span-1">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg">
+                                <span class="text-white text-xl sm:text-2xl md:text-3xl">📖</span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Pendalaman Iman</h3>
-                            <p class="text-gray-600 leading-relaxed">
+                            <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">Pendalaman Iman</h3>
+                            <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
                                 Memperdalam pemahaman akan ajaran Kristus melalui sharing dan refleksi bersama komunitas
                             </p>
                         </div>
@@ -385,6 +385,90 @@
                     </div>
                 </div>
             </section>
+
+            <!-- History Section -->
+            <section class="py-20 bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 relative overflow-hidden">
+                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div class="absolute top-20 right-10 text-6xl opacity-10 animate-pulse">📜</div>
+                    <div class="absolute bottom-20 left-10 text-5xl opacity-15 animate-bounce" style="animation-delay: 1s;">⛪</div>
+                    <div class="absolute top-1/2 left-1/4 text-4xl opacity-20 animate-pulse" style="animation-delay: 2s;">🌹</div>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                    <div class="text-center mb-16">
+                        <div class="inline-block mb-6">
+                            <div class="flex items-center justify-center space-x-2 bg-gradient-to-r from-rose-100 to-pink-100 px-6 py-3 rounded-full border border-rose-200/50 shadow-lg">
+                                <span class="text-2xl">📜</span>
+                                <span class="text-rose-800 font-semibold">Sejarah Kami</span>
+                                <span class="text-2xl">⛪</span>
+                            </div>
+                        </div>
+                        
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                            Perjalanan <span class="bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">Iman & Kasih</span>
+                        </h2>
+                        
+                        <div class="max-w-5xl mx-auto space-y-6">
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Rukun Santa Theresia Paroki Santo Mathias Saumlaki berdiri atas dasar semangat kebersamaan umat yang rindu untuk bertumbuh dalam iman dan pelayanan. Terinspirasi oleh teladan hidup Santa Theresia dari Kanak-kanak Yesus, rukun ini dibentuk sebagai wadah bagi umat untuk berdoa bersama, saling mendukung, dan memperdalam kehidupan rohani dalam kesederhanaan dan kasih.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Seiring perjalanan waktu, Rukun Santa Theresia berkembang menjadi komunitas yang aktif dalam berbagai kegiatan gerejawi dan sosial. Melalui doa bersama, kunjungan kasih, perayaan liturgi, serta keterlibatan dalam kegiatan paroki, rukun ini menjadi tempat bagi umat untuk memperkuat tali persaudaraan dan menumbuhkan semangat pelayanan yang tulus. Nilai-nilai kerendahan hati, keikhlasan, dan cinta kasih yang diajarkan Santa Theresia menjadi dasar dalam setiap karya pelayanan yang dijalankan.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Kini, Rukun Santa Theresia terus berupaya menghadirkan wajah Gereja yang hidup di tengah umat Paroki Santo Mathias Saumlaki. Dengan dukungan seluruh anggota dan bimbingan para gembala, rukun ini berkomitmen untuk menjadi saluran berkat bagi sesama, menghadirkan sukacita Injil melalui tindakan nyata, serta meneladani Santa Theresia yang selalu berkata, <strong class="text-rose-700">"Melakukan hal-hal kecil dengan cinta yang besar."</strong>
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <!-- Vision Mission -->
+                    <div class="mt-20 grid md:grid-cols-2 gap-12">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-rose-200/30">
+                            <div class="text-center mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span class="text-white text-3xl">👁️</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Visi Kami</h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed text-center">
+                                Menjadi komunitas iman yang hidup dan bersaksi, mengikuti teladan Santa Theresia 
+                                dalam "Jalan Kecil" menuju kesucian, serta menjadi berkat bagi sesama dan lingkungan.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-blue-200/30">
+                            <div class="text-center mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span class="text-white text-3xl">🎯</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Misi Kami</h3>
+                            </div>
+                            <ul class="text-gray-700 space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Menumbuhkan spiritualitas melalui doa dan ibadah bersama
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Melayani sesama dengan kasih dan kerendahan hati
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Membangun persaudaraan yang erat dalam komunitas
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Meneladani hidup Santa Theresia dalam keseharian
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
         <!-- Tentang Kami Page -->
@@ -423,6 +507,8 @@
                     </div>
                 </div>
             </section>
+
+
 
             <section class="py-20 bg-white relative overflow-hidden">
                 <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -478,15 +564,7 @@
                             <!-- Greeting Message Section -->
                             <div class="mb-8 bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-amber-200/50 shadow-lg">
                                 <div class="text-gray-700 leading-relaxed space-y-4 text-left">
-                                    <p>Syukur kepada Tuhan Yesus Kristus atas rahmat dan kasih-Nya yang senantiasa menyertai perjalanan kita.</p>
-                                    
-                                    <p>Dengan penuh sukacita, Rukun Santa Theresia Paroki Santo Mathias Saumlaki kini menghadirkan website ini sebagai media informasi, komunikasi, dan pelayanan rohani bagi seluruh umat.</p>
-                                    
-                                    <p>Kehadiran website ini mencerminkan semangat kami untuk terus menumbuhkan iman dan mempererat persaudaraan di tengah komunitas umat beriman. Melalui laman ini, kami berharap setiap umat dapat saling berbagi kabar kegiatan, memperdalam teladan hidup Santa Theresia, serta meneguhkan panggilan pelayanan dengan sederhana dan penuh kasih.</p>
-                                    
-                                    <p>Kiranya website ini menjadi sarana yang membawa berkat, menginspirasi, dan memperkuat ikatan iman kita bersama. Semoga setiap langkah kita selalu berakar dalam iman, bertumbuh dalam pengharapan, dan berbuah dalam kasih Kristus.</p>
-                                    
-                                    <p class="font-semibold text-amber-800">Tuhan memberkati.</p>
+                                    <p>Syukur kepada Tuhan Yesus Kristus atas rahmat dan kasih-Nya yang senantiasa menyertai perjalanan kita. Dengan penuh sukacita, Rukun Santa Theresia Paroki Santo Mathias Saumlaki menghadirkan website ini sebagai media informasi, komunikasi, dan pelayanan rohani bagi seluruh umat. Kehadiran laman ini mencerminkan semangat kami untuk terus menumbuhkan iman, mempererat persaudaraan, serta meneladani kehidupan Santa Theresia dalam kesederhanaan dan kasih. Semoga website ini menjadi sarana yang membawa berkat, menginspirasi, dan memperkuat ikatan iman kita bersama agar senantiasa berakar dalam iman, bertumbuh dalam pengharapan, dan berbuah dalam kasih Kristus. Tuhan memberkati.</p>
                                     
                                     <p class="italic text-amber-700 text-center">
                                         Salam damai dalam kasih Kristus,<br>
@@ -516,24 +594,124 @@
                     </div>
                 </div>
             </section>
+
+            <!-- History Section -->
+            <section class="py-20 bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 relative overflow-hidden">
+                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div class="absolute top-20 right-10 text-6xl opacity-10 animate-pulse">📜</div>
+                    <div class="absolute bottom-20 left-10 text-5xl opacity-15 animate-bounce" style="animation-delay: 1s;">⛪</div>
+                    <div class="absolute top-1/2 left-1/4 text-4xl opacity-20 animate-pulse" style="animation-delay: 2s;">🌹</div>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                    <div class="text-center mb-16">
+                        <div class="inline-block mb-6">
+                            <div class="flex items-center justify-center space-x-2 bg-gradient-to-r from-rose-100 to-pink-100 px-6 py-3 rounded-full border border-rose-200/50 shadow-lg">
+                                <span class="text-2xl">📜</span>
+                                <span class="text-rose-800 font-semibold">Sejarah Kami</span>
+                                <span class="text-2xl">⛪</span>
+                            </div>
+                        </div>
+                        
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                            Perjalanan <span class="bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">Iman & Kasih</span>
+                        </h2>
+                        
+                        <div class="max-w-5xl mx-auto space-y-6">
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Rukun Santa Theresia Paroki Santo Mathias Saumlaki berdiri atas dasar semangat kebersamaan umat yang rindu untuk bertumbuh dalam iman dan pelayanan. Terinspirasi oleh teladan hidup Santa Theresia dari Kanak-kanak Yesus, rukun ini dibentuk sebagai wadah bagi umat untuk berdoa bersama, saling mendukung, dan memperdalam kehidupan rohani dalam kesederhanaan dan kasih.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Seiring perjalanan waktu, Rukun Santa Theresia berkembang menjadi komunitas yang aktif dalam berbagai kegiatan gerejawi dan sosial. Melalui doa bersama, kunjungan kasih, perayaan liturgi, serta keterlibatan dalam kegiatan paroki, rukun ini menjadi tempat bagi umat untuk memperkuat tali persaudaraan dan menumbuhkan semangat pelayanan yang tulus. Nilai-nilai kerendahan hati, keikhlasan, dan cinta kasih yang diajarkan Santa Theresia menjadi dasar dalam setiap karya pelayanan yang dijalankan.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Kini, Rukun Santa Theresia terus berupaya menghadirkan wajah Gereja yang hidup di tengah umat Paroki Santo Mathias Saumlaki. Dengan dukungan seluruh anggota dan bimbingan para gembala, rukun ini berkomitmen untuk menjadi saluran berkat bagi sesama, menghadirkan sukacita Injil melalui tindakan nyata, serta meneladani Santa Theresia yang selalu berkata, <strong class="text-rose-700">"Melakukan hal-hal kecil dengan cinta yang besar."</strong>
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <!-- Vision Mission -->
+                    <div class="mt-20 grid md:grid-cols-2 gap-12">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-rose-200/30">
+                            <div class="text-center mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span class="text-white text-3xl">👁️</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Visi Kami</h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed text-center">
+                                Menjadi komunitas iman yang hidup dan bersaksi, mengikuti teladan Santa Theresia 
+                                dalam "Jalan Kecil" menuju kesucian, serta menjadi berkat bagi sesama dan lingkungan.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-blue-200/30">
+                            <div class="text-center mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span class="text-white text-3xl">🎯</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Misi Kami</h3>
+                            </div>
+                            <ul class="text-gray-700 space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Menumbuhkan spiritualitas melalui doa dan ibadah bersama
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Melayani sesama dengan kasih dan kerendahan hati
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Membangun persaudaraan yang erat dalam komunitas
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Meneladani hidup Santa Theresia dalam keseharian
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
         <!-- Jadwal Ibadah Page -->
         <div id="jadwal-page" class="page-content hidden">
-            <section class="pt-32 pb-16 bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-12">
-                        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Jadwal Ibadah Rukun</h1>
-                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            <section class="pt-20 sm:pt-24 md:pt-32 pb-8 sm:pb-12 md:pb-16 bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen">
+                <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+                    <div class="text-center mb-8 sm:mb-10 md:mb-12">
+                        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">Jadwal Ibadah Rukun</h1>
+                        <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto px-2">
                             Bergabunglah dengan kami dalam berbagai kegiatan ibadah dan doa bersama Santa Theresia
                         </p>
                     </div>
                     
-                    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-                        <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <span class="text-gray-700 font-medium">Filter Kategori:</span>
-                                <select id="kategori-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white">
+                    <div class="bg-white rounded-lg shadow-lg p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 md:mb-8">
+                        <!-- Database Status Indicator -->
+                        <div class="mb-4 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                                    <span class="text-sm font-medium text-blue-800">🔗 Terhubung ke Google Sheets</span>
+                                </div>
+                                <div class="text-xs text-blue-600">
+                                    Data otomatis terupdate
+                                </div>
+                            </div>
+                            <div class="mt-2 text-xs text-blue-700">
+                                📊 Database: Jadwal Ibadah Rukun Santa Theresia
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center justify-between">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full sm:w-auto">
+                                <span class="text-gray-700 font-medium text-sm sm:text-base whitespace-nowrap">Filter Kategori:</span>
+                                <select id="kategori-filter" class="w-full sm:w-auto px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white text-sm sm:text-base">
                                     <option value="">Semua Kategori</option>
                                     <option value="Rosario">Rosario</option>
                                     <option value="Bulan Maria">Bulan Maria</option>
@@ -545,33 +723,33 @@
                                     <option value="Lainnya">Lainnya</option>
                                 </select>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <button onclick="loadJadwalIbadah()" class="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition duration-300 flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="flex items-center gap-2 w-full sm:w-auto">
+                                <button onclick="loadJadwalIbadah()" class="w-full sm:w-auto px-3 sm:px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
+                                    <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                                     </svg>
-                                    Refresh
+                                    Refresh Data
                                 </button>
                             </div>
                         </div>
                     </div>
                     
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div id="jadwal-loading" class="text-center py-12">
+                        <div id="jadwal-loading" class="text-center py-8 sm:py-10 md:py-12">
                             <div class="loading-spinner"></div>
-                            <p class="text-gray-600 mt-4">Memuat jadwal ibadah...</p>
+                            <p class="text-gray-600 mt-4 text-sm sm:text-base">Memuat jadwal ibadah...</p>
                         </div>
                         
                         <div id="jadwal-content" class="hidden">
-                            <div class="hidden md:block overflow-x-auto">
+                            <div class="hidden lg:block overflow-x-auto">
                                 <table class="w-full">
                                     <thead class="bg-gradient-to-r from-amber-600 to-amber-700 text-white">
                                         <tr>
-                                            <th class="px-6 py-4 text-left font-semibold">Tanggal</th>
-                                            <th class="px-6 py-4 text-left font-semibold">Waktu</th>
-                                            <th class="px-6 py-4 text-left font-semibold">Tempat Ibadah</th>
-                                            <th class="px-6 py-4 text-left font-semibold">Pemimpin Ibadah</th>
-                                            <th class="px-6 py-4 text-left font-semibold">Kategori</th>
+                                            <th class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-left font-semibold text-sm sm:text-base">Tanggal</th>
+                                            <th class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-left font-semibold text-sm sm:text-base">Waktu</th>
+                                            <th class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-left font-semibold text-sm sm:text-base">Tempat Ibadah</th>
+                                            <th class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-left font-semibold text-sm sm:text-base">Pemimpin Ibadah</th>
+                                            <th class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-left font-semibold text-sm sm:text-base">Kategori</th>
                                         </tr>
                                     </thead>
                                     <tbody id="jadwal-tbody-desktop">
@@ -579,23 +757,113 @@
                                 </table>
                             </div>
                             
-                            <div class="md:hidden" id="jadwal-mobile-container">
+                            <div class="lg:hidden" id="jadwal-mobile-container">
                             </div>
                             
-                            <div id="jadwal-empty" class="hidden text-center py-12">
-                                <div class="text-6xl mb-4">📅</div>
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Tidak Ada Jadwal</h3>
-                                <p class="text-gray-600">Tidak ada jadwal ibadah untuk kategori yang dipilih.</p>
+                            <div id="jadwal-empty" class="hidden text-center py-8 sm:py-10 md:py-12">
+                                <div class="text-4xl sm:text-5xl md:text-6xl mb-4">📅</div>
+                                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Tidak Ada Jadwal</h3>
+                                <p class="text-gray-600 text-sm sm:text-base">Tidak ada jadwal ibadah untuk kategori yang dipilih.</p>
                             </div>
                         </div>
                         
-                        <div id="jadwal-error" class="hidden text-center py-12">
-                            <div class="text-6xl mb-4">⚠️</div>
-                            <h3 class="text-xl font-semibold text-red-600 mb-2">Terjadi Kesalahan</h3>
-                            <p class="text-gray-600 mb-4">Maaf, terjadi kesalahan saat memuat jadwal ibadah.</p>
-                            <button onclick="loadJadwalIbadah()" class="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition duration-300">
+                        <div id="jadwal-error" class="hidden text-center py-8 sm:py-10 md:py-12">
+                            <div class="text-4xl sm:text-5xl md:text-6xl mb-4">⚠️</div>
+                            <h3 class="text-lg sm:text-xl font-semibold text-red-600 mb-2">Terjadi Kesalahan</h3>
+                            <p class="text-gray-600 mb-4 text-sm sm:text-base">Maaf, terjadi kesalahan saat memuat jadwal ibadah dari Google Sheets.</p>
+                            <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-4 max-w-md mx-auto">
+                                <p class="text-sm text-red-700">
+                                    🔗 <strong>Database:</strong> Google Sheets<br>
+                                    📊 <strong>Kolom:</strong> Timestamp, Tanggal, Waktu, Tempat Ibadah, Pemimpin Ibadah, Kategori
+                                </p>
+                            </div>
+                            <button onclick="loadJadwalIbadah()" class="px-3 sm:px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition duration-300 text-sm sm:text-base">
                                 Coba Lagi
                             </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section class="py-20 bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 relative overflow-hidden">
+                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div class="absolute top-20 right-10 text-6xl opacity-10 animate-pulse">📜</div>
+                    <div class="absolute bottom-20 left-10 text-5xl opacity-15 animate-bounce" style="animation-delay: 1s;">⛪</div>
+                    <div class="absolute top-1/2 left-1/4 text-4xl opacity-20 animate-pulse" style="animation-delay: 2s;">🌹</div>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                    <div class="text-center mb-16">
+                        <div class="inline-block mb-6">
+                            <div class="flex items-center justify-center space-x-2 bg-gradient-to-r from-rose-100 to-pink-100 px-6 py-3 rounded-full border border-rose-200/50 shadow-lg">
+                                <span class="text-2xl">📜</span>
+                                <span class="text-rose-800 font-semibold">Sejarah Kami</span>
+                                <span class="text-2xl">⛪</span>
+                            </div>
+                        </div>
+                        
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                            Perjalanan <span class="bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">Iman & Kasih</span>
+                        </h2>
+                        
+                        <div class="max-w-5xl mx-auto space-y-6">
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Rukun Santa Theresia Paroki Santo Mathias Saumlaki berdiri atas dasar semangat kebersamaan umat yang rindu untuk bertumbuh dalam iman dan pelayanan. Terinspirasi oleh teladan hidup Santa Theresia dari Kanak-kanak Yesus, rukun ini dibentuk sebagai wadah bagi umat untuk berdoa bersama, saling mendukung, dan memperdalam kehidupan rohani dalam kesederhanaan dan kasih.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Seiring perjalanan waktu, Rukun Santa Theresia berkembang menjadi komunitas yang aktif dalam berbagai kegiatan gerejawi dan sosial. Melalui doa bersama, kunjungan kasih, perayaan liturgi, serta keterlibatan dalam kegiatan paroki, rukun ini menjadi tempat bagi umat untuk memperkuat tali persaudaraan dan menumbuhkan semangat pelayanan yang tulus. Nilai-nilai kerendahan hati, keikhlasan, dan cinta kasih yang diajarkan Santa Theresia menjadi dasar dalam setiap karya pelayanan yang dijalankan.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Kini, Rukun Santa Theresia terus berupaya menghadirkan wajah Gereja yang hidup di tengah umat Paroki Santo Mathias Saumlaki. Dengan dukungan seluruh anggota dan bimbingan para gembala, rukun ini berkomitmen untuk menjadi saluran berkat bagi sesama, menghadirkan sukacita Injil melalui tindakan nyata, serta meneladani Santa Theresia yang selalu berkata, <strong class="text-rose-700">"Melakukan hal-hal kecil dengan cinta yang besar."</strong>
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <!-- Vision Mission -->
+                    <div class="mt-20 grid md:grid-cols-2 gap-12">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-rose-200/30">
+                            <div class="text-center mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span class="text-white text-3xl">👁️</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Visi Kami</h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed text-center">
+                                Menjadi komunitas iman yang hidup dan bersaksi, mengikuti teladan Santa Theresia 
+                                dalam "Jalan Kecil" menuju kesucian, serta menjadi berkat bagi sesama dan lingkungan.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-blue-200/30">
+                            <div class="text-center mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span class="text-white text-3xl">🎯</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Misi Kami</h3>
+                            </div>
+                            <ul class="text-gray-700 space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Menumbuhkan spiritualitas melalui doa dan ibadah bersama
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Melayani sesama dengan kasih dan kerendahan hati
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Membangun persaudaraan yang erat dalam komunitas
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Meneladani hidup Santa Theresia dalam keseharian
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -800,64 +1068,152 @@
                     </div>
                 </div>
             </section>
-        </div>
 
-        <!-- Kontak Page -->
-        <div id="kontak-page" class="page-content hidden">
-            <section class="pt-32 pb-16 bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 relative overflow-hidden">
+            <!-- History Section -->
+            <section class="py-20 bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 relative overflow-hidden">
                 <div class="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div class="absolute top-20 right-10 text-6xl opacity-10 animate-pulse">💬</div>
-                    <div class="absolute bottom-20 left-10 text-5xl opacity-15 animate-bounce" style="animation-delay: 1s;">📞</div>
-                    <div class="absolute top-1/2 right-1/4 text-4xl opacity-20 animate-pulse" style="animation-delay: 2s;">✉️</div>
-                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-full blur-3xl"></div>
-                    <div class="absolute -bottom-10 -left-10 w-60 h-60 bg-gradient-to-br from-rose-200/20 to-orange-200/20 rounded-full blur-3xl"></div>
+                    <div class="absolute top-20 right-10 text-6xl opacity-10 animate-pulse">📜</div>
+                    <div class="absolute bottom-20 left-10 text-5xl opacity-15 animate-bounce" style="animation-delay: 1s;">⛪</div>
+                    <div class="absolute top-1/2 left-1/4 text-4xl opacity-20 animate-pulse" style="animation-delay: 2s;">🌹</div>
                 </div>
                 
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                     <div class="text-center mb-16">
                         <div class="inline-block mb-6">
-                            <div class="flex items-center justify-center space-x-2 bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3 rounded-full border border-purple-200/50 shadow-lg">
-                                <span class="text-2xl">💬</span>
-                                <span class="text-purple-800 font-semibold">Hubungi Kami</span>
-                                <span class="text-2xl">📞</span>
+                            <div class="flex items-center justify-center space-x-2 bg-gradient-to-r from-rose-100 to-pink-100 px-6 py-3 rounded-full border border-rose-200/50 shadow-lg">
+                                <span class="text-2xl">📜</span>
+                                <span class="text-rose-800 font-semibold">Sejarah Kami</span>
+                                <span class="text-2xl">⛪</span>
                             </div>
                         </div>
                         
-                        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                            Perjalanan <span class="bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">Iman & Kasih</span>
+                        </h2>
+                        
+                        <div class="max-w-5xl mx-auto space-y-6">
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Rukun Santa Theresia Paroki Santo Mathias Saumlaki berdiri atas dasar semangat kebersamaan umat yang rindu untuk bertumbuh dalam iman dan pelayanan. Terinspirasi oleh teladan hidup Santa Theresia dari Kanak-kanak Yesus, rukun ini dibentuk sebagai wadah bagi umat untuk berdoa bersama, saling mendukung, dan memperdalam kehidupan rohani dalam kesederhanaan dan kasih.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Seiring perjalanan waktu, Rukun Santa Theresia berkembang menjadi komunitas yang aktif dalam berbagai kegiatan gerejawi dan sosial. Melalui doa bersama, kunjungan kasih, perayaan liturgi, serta keterlibatan dalam kegiatan paroki, rukun ini menjadi tempat bagi umat untuk memperkuat tali persaudaraan dan menumbuhkan semangat pelayanan yang tulus. Nilai-nilai kerendahan hati, keikhlasan, dan cinta kasih yang diajarkan Santa Theresia menjadi dasar dalam setiap karya pelayanan yang dijalankan.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Kini, Rukun Santa Theresia terus berupaya menghadirkan wajah Gereja yang hidup di tengah umat Paroki Santo Mathias Saumlaki. Dengan dukungan seluruh anggota dan bimbingan para gembala, rukun ini berkomitmen untuk menjadi saluran berkat bagi sesama, menghadirkan sukacita Injil melalui tindakan nyata, serta meneladani Santa Theresia yang selalu berkata, <strong class="text-rose-700">"Melakukan hal-hal kecil dengan cinta yang besar."</strong>
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <!-- Vision Mission -->
+                    <div class="mt-20 grid md:grid-cols-2 gap-12">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-rose-200/30">
+                            <div class="text-center mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span class="text-white text-3xl">👁️</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Visi Kami</h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed text-center">
+                                Menjadi komunitas iman yang hidup dan bersaksi, mengikuti teladan Santa Theresia 
+                                dalam "Jalan Kecil" menuju kesucian, serta menjadi berkat bagi sesama dan lingkungan.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-blue-200/30">
+                            <div class="text-center mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span class="text-white text-3xl">🎯</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Misi Kami</h3>
+                            </div>
+                            <ul class="text-gray-700 space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Menumbuhkan spiritualitas melalui doa dan ibadah bersama
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Melayani sesama dengan kasih dan kerendahan hati
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Membangun persaudaraan yang erat dalam komunitas
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Meneladani hidup Santa Theresia dalam keseharian
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Kontak Page -->
+        <div id="kontak-page" class="page-content hidden">
+            <section class="pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-12 md:pb-16 bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 relative overflow-hidden min-h-screen">
+                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div class="absolute top-20 right-4 sm:right-10 text-4xl sm:text-5xl md:text-6xl opacity-10 animate-pulse">💬</div>
+                    <div class="absolute bottom-20 left-4 sm:left-10 text-3xl sm:text-4xl md:text-5xl opacity-15 animate-bounce" style="animation-delay: 1s;">📞</div>
+                    <div class="absolute top-1/2 right-1/4 text-2xl sm:text-3xl md:text-4xl opacity-20 animate-pulse" style="animation-delay: 2s;">✉️</div>
+                    <div class="absolute -top-10 -right-10 w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-10 -left-10 w-32 h-32 sm:w-48 sm:h-48 md:w-60 md:h-60 bg-gradient-to-br from-rose-200/20 to-orange-200/20 rounded-full blur-3xl"></div>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                    <!-- Header Section -->
+                    <div class="text-center mb-8 sm:mb-12 md:mb-16">
+                        <div class="inline-block mb-4 sm:mb-6">
+                            <div class="flex items-center justify-center space-x-2 bg-gradient-to-r from-purple-100 to-pink-100 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-purple-200/50 shadow-lg">
+                                <span class="text-lg sm:text-xl md:text-2xl">💬</span>
+                                <span class="text-purple-800 font-semibold text-sm sm:text-base">Hubungi Kami</span>
+                                <span class="text-lg sm:text-xl md:text-2xl">📞</span>
+                            </div>
+                        </div>
+                        
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2">
                             Mari <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Terhubung</span>
                         </h1>
                         
-                        <p class="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
+                        <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8 px-2">
                             Kami senang mendengar dari Anda. Jangan ragu untuk menghubungi kami kapan saja. 
                             <strong class="text-purple-700">Pintu hati kami selalu terbuka</strong>
                         </p>
                         
-                        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 max-w-3xl mx-auto border border-purple-200/30 shadow-xl">
-                            <p class="text-lg text-purple-800 italic leading-relaxed">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 max-w-3xl mx-auto border border-purple-200/30 shadow-xl">
+                            <p class="text-sm sm:text-base md:text-lg text-purple-800 italic leading-relaxed">
                                 "Dalam setiap percakapan, kita berbagi kasih Kristus"
                             </p>
                         </div>
                     </div>
                     
-                    <div class="grid lg:grid-cols-2 gap-12 items-start">
-                        <div class="space-y-8">
-                            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-purple-200/30">
-                                <div class="text-center mb-8">
-                                    <div class="inline-block p-4 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full shadow-lg mb-4">
-                                        <span class="text-5xl">📍</span>
+                    <!-- Main Content Grid -->
+                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start">
+                        <!-- Contact Information Section -->
+                        <div class="order-2 xl:order-1 space-y-6 sm:space-y-8">
+                            <div class="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-purple-200/30">
+                                <div class="text-center mb-6 sm:mb-8">
+                                    <div class="inline-block p-3 sm:p-4 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full shadow-lg mb-3 sm:mb-4">
+                                        <span class="text-3xl sm:text-4xl md:text-5xl">📍</span>
                                     </div>
-                                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Informasi Kontak</h2>
-                                    <p class="text-purple-600">Temukan kami di sini</p>
+                                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Informasi Kontak</h2>
+                                    <p class="text-purple-600 text-sm sm:text-base">Temukan kami di sini</p>
                                 </div>
                                 
-                                <div class="space-y-6">
-                                    <div class="group flex items-start p-4 rounded-2xl hover:bg-purple-50/50 transition-all duration-300">
-                                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                            <span class="text-white text-xl">🏛️</span>
+                                <div class="space-y-4 sm:space-y-6">
+                                    <!-- Address -->
+                                    <div class="group flex items-start p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-purple-50/50 transition-all duration-300">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mr-3 sm:mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                            <span class="text-white text-lg sm:text-xl">🏛️</span>
                                         </div>
-                                        <div>
-                                            <h3 class="font-bold text-gray-900 mb-2 text-lg">Alamat Paroki</h3>
-                                            <p class="text-gray-600 leading-relaxed">
+                                        <div class="min-w-0 flex-1">
+                                            <h3 class="font-bold text-gray-900 mb-1 sm:mb-2 text-base sm:text-lg">Alamat Paroki</h3>
+                                            <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
                                                 Paroki Santo Mathias<br>
                                                 Saumlaki, Maluku Tenggara Barat<br>
                                                 Indonesia
@@ -865,35 +1221,38 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="group flex items-start p-4 rounded-2xl hover:bg-purple-50/50 transition-all duration-300">
-                                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                            <span class="text-white text-xl">📞</span>
+                                    <!-- Phone -->
+                                    <div class="group flex items-start p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-purple-50/50 transition-all duration-300">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mr-3 sm:mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                            <span class="text-white text-lg sm:text-xl">📞</span>
                                         </div>
-                                        <div>
-                                            <h3 class="font-bold text-gray-900 mb-2 text-lg">Telepon</h3>
-                                            <p class="text-gray-600">+62 xxx-xxxx-xxxx</p>
-                                            <p class="text-sm text-gray-500 mt-1">Hubungi kami untuk informasi lebih lanjut</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="group flex items-start p-4 rounded-2xl hover:bg-purple-50/50 transition-all duration-300">
-                                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center shadow-lg mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                            <span class="text-white text-xl">✉️</span>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-bold text-gray-900 mb-2 text-lg">Email</h3>
-                                            <p class="text-gray-600">santatheresiasaumlaki@gmail.com</p>
-                                            <p class="text-sm text-gray-500 mt-1">Kirim email untuk pertanyaan detail</p>
+                                        <div class="min-w-0 flex-1">
+                                            <h3 class="font-bold text-gray-900 mb-1 sm:mb-2 text-base sm:text-lg">Telepon</h3>
+                                            <p class="text-gray-600 text-sm sm:text-base">+62 xxx-xxxx-xxxx</p>
+                                            <p class="text-xs sm:text-sm text-gray-500 mt-1">Hubungi kami untuk informasi lebih lanjut</p>
                                         </div>
                                     </div>
                                     
-                                    <div class="group flex items-start p-4 rounded-2xl hover:bg-purple-50/50 transition-all duration-300">
-                                        <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                            <span class="text-white text-xl">⏰</span>
+                                    <!-- Email -->
+                                    <div class="group flex items-start p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-purple-50/50 transition-all duration-300">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mr-3 sm:mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                            <span class="text-white text-lg sm:text-xl">✉️</span>
                                         </div>
-                                        <div>
-                                            <h3 class="font-bold text-gray-900 mb-2 text-lg">Jam Pelayanan</h3>
-                                            <div class="text-gray-600 space-y-1">
+                                        <div class="min-w-0 flex-1">
+                                            <h3 class="font-bold text-gray-900 mb-1 sm:mb-2 text-base sm:text-lg">Email</h3>
+                                            <p class="text-gray-600 text-sm sm:text-base break-all">santatheresiasaumlaki@gmail.com</p>
+                                            <p class="text-xs sm:text-sm text-gray-500 mt-1">Kirim email untuk pertanyaan detail</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Operating Hours -->
+                                    <div class="group flex items-start p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-purple-50/50 transition-all duration-300">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mr-3 sm:mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                            <span class="text-white text-lg sm:text-xl">⏰</span>
+                                        </div>
+                                        <div class="min-w-0 flex-1">
+                                            <h3 class="font-bold text-gray-900 mb-1 sm:mb-2 text-base sm:text-lg">Jam Pelayanan</h3>
+                                            <div class="text-gray-600 space-y-1 text-sm sm:text-base">
                                                 <p><span class="font-medium">Senin - Jumat:</span> 08:00 - 16:00</p>
                                                 <p><span class="font-medium">Sabtu:</span> 08:00 - 12:00</p>
                                                 <p><span class="font-medium">Minggu:</span> Setelah Misa</p>
@@ -904,21 +1263,23 @@
                             </div>
                         </div>
                         
-                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-purple-200/30">
-                            <div class="text-center mb-8">
-                                <div class="inline-block p-4 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full shadow-lg mb-4">
-                                    <span class="text-5xl">📝</span>
+                        <!-- Contact Form Section -->
+                        <div class="order-1 xl:order-2 bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-purple-200/30">
+                            <div class="text-center mb-6 sm:mb-8">
+                                <div class="inline-block p-3 sm:p-4 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full shadow-lg mb-3 sm:mb-4">
+                                    <span class="text-3xl sm:text-4xl md:text-5xl">📝</span>
                                 </div>
-                                <h2 class="text-3xl font-bold text-gray-900 mb-2">Kirim Pesan</h2>
-                                <p class="text-purple-600">Sampaikan pesan Anda kepada kami</p>
+                                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Kirim Pesan</h2>
+                                <p class="text-purple-600 text-sm sm:text-base">Sampaikan pesan Anda kepada kami</p>
                             </div>
                             
-                            <form id="contact-form" class="space-y-6">
-                                <div class="grid md:grid-cols-2 gap-6">
+                            <form id="contact-form" class="space-y-4 sm:space-y-6">
+                                <!-- Name and Email Row -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                     <div>
-                                        <label for="nama" class="block text-sm font-semibold text-gray-700 mb-3">
+                                        <label for="nama" class="block text-xs sm:text-sm font-semibold text-gray-700 mb-2 sm:mb-3">
                                             <span class="flex items-center">
-                                                <span class="text-lg mr-2">👤</span>
+                                                <span class="text-base sm:text-lg mr-2">👤</span>
                                                 Nama Lengkap
                                             </span>
                                         </label>
@@ -927,15 +1288,15 @@
                                             id="nama" 
                                             name="nama" 
                                             required 
-                                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm text-sm sm:text-base"
                                             placeholder="Masukkan nama lengkap Anda"
                                         >
                                     </div>
                                     
                                     <div>
-                                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-3">
+                                        <label for="email" class="block text-xs sm:text-sm font-semibold text-gray-700 mb-2 sm:mb-3">
                                             <span class="flex items-center">
-                                                <span class="text-lg mr-2">✉️</span>
+                                                <span class="text-base sm:text-lg mr-2">✉️</span>
                                                 Email
                                             </span>
                                         </label>
@@ -944,16 +1305,17 @@
                                             id="email" 
                                             name="email" 
                                             required 
-                                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm text-sm sm:text-base"
                                             placeholder="nama@email.com"
                                         >
                                     </div>
                                 </div>
                                 
+                                <!-- Phone Number -->
                                 <div>
-                                    <label for="phone" class="block text-sm font-semibold text-gray-700 mb-3">
+                                    <label for="phone" class="block text-xs sm:text-sm font-semibold text-gray-700 mb-2 sm:mb-3">
                                         <span class="flex items-center">
-                                            <span class="text-lg mr-2">📱</span>
+                                            <span class="text-base sm:text-lg mr-2">📱</span>
                                             Nomor Handphone
                                         </span>
                                     </label>
@@ -962,15 +1324,16 @@
                                         id="phone" 
                                         name="phone" 
                                         required 
-                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm" 
+                                        class="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm text-sm sm:text-base" 
                                         placeholder="Contoh: 081234567890"
                                     >
                                 </div>
                                 
+                                <!-- Subject -->
                                 <div>
-                                    <label for="subjek" class="block text-sm font-semibold text-gray-700 mb-3">
+                                    <label for="subjek" class="block text-xs sm:text-sm font-semibold text-gray-700 mb-2 sm:mb-3">
                                         <span class="flex items-center">
-                                            <span class="text-lg mr-2">📋</span>
+                                            <span class="text-base sm:text-lg mr-2">📋</span>
                                             Subjek
                                         </span>
                                     </label>
@@ -979,49 +1342,135 @@
                                         id="subjek" 
                                         name="subjek" 
                                         required 
-                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                                        class="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm text-sm sm:text-base"
                                         placeholder="Topik pesan Anda"
                                     >
                                 </div>
                                 
+                                <!-- Message -->
                                 <div>
-                                    <label for="pesan" class="block text-sm font-semibold text-gray-700 mb-3">
+                                    <label for="pesan" class="block text-xs sm:text-sm font-semibold text-gray-700 mb-2 sm:mb-3">
                                         <span class="flex items-center">
-                                            <span class="text-lg mr-2">💬</span>
+                                            <span class="text-base sm:text-lg mr-2">💬</span>
                                             Pesan
                                         </span>
                                     </label>
                                     <textarea 
                                         id="pesan" 
                                         name="pesan" 
-                                        rows="6" 
+                                        rows="5" 
                                         required 
-                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm resize-none"
+                                        class="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm resize-none text-sm sm:text-base"
                                         placeholder="Tulis pesan Anda di sini..."
                                     ></textarea>
                                 </div>
                                 
+                                <!-- Submit Button -->
                                 <button 
                                     type="submit" 
-                                    class="group w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform flex items-center justify-center space-x-3"
+                                    class="group w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg sm:rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform flex items-center justify-center space-x-2 sm:space-x-3 text-sm sm:text-base"
                                 >
-                                    <svg class="w-6 h-6 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
                                     </svg>
                                     <span>Kirim via WhatsApp</span>
-                                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                                     </svg>
                                 </button>
                             </form>
                             
-                            <div id="form-message" class="hidden mt-6 p-4 rounded-xl"></div>
+                            <div id="form-message" class="hidden mt-4 sm:mt-6 p-3 sm:p-4 rounded-lg sm:rounded-xl"></div>
                             
-                            <div class="mt-6 text-center">
-                                <p class="text-sm text-gray-500">
+                            <div class="mt-4 sm:mt-6 text-center">
+                                <p class="text-xs sm:text-sm text-gray-500">
                                     Dengan mengirim pesan, Anda akan diarahkan ke WhatsApp untuk melanjutkan percakapan
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section class="py-20 bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 relative overflow-hidden">
+                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div class="absolute top-20 right-10 text-6xl opacity-10 animate-pulse">📜</div>
+                    <div class="absolute bottom-20 left-10 text-5xl opacity-15 animate-bounce" style="animation-delay: 1s;">⛪</div>
+                    <div class="absolute top-1/2 left-1/4 text-4xl opacity-20 animate-pulse" style="animation-delay: 2s;">🌹</div>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                    <div class="text-center mb-16">
+                        <div class="inline-block mb-6">
+                            <div class="flex items-center justify-center space-x-2 bg-gradient-to-r from-rose-100 to-pink-100 px-6 py-3 rounded-full border border-rose-200/50 shadow-lg">
+                                <span class="text-2xl">📜</span>
+                                <span class="text-rose-800 font-semibold">Sejarah Kami</span>
+                                <span class="text-2xl">⛪</span>
+                            </div>
+                        </div>
+                        
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                            Perjalanan <span class="bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">Iman & Kasih</span>
+                        </h2>
+                        
+                        <div class="max-w-5xl mx-auto space-y-6">
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Rukun Santa Theresia Paroki Santo Mathias Saumlaki berdiri atas dasar semangat kebersamaan umat yang rindu untuk bertumbuh dalam iman dan pelayanan. Terinspirasi oleh teladan hidup Santa Theresia dari Kanak-kanak Yesus, rukun ini dibentuk sebagai wadah bagi umat untuk berdoa bersama, saling mendukung, dan memperdalam kehidupan rohani dalam kesederhanaan dan kasih.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Seiring perjalanan waktu, Rukun Santa Theresia berkembang menjadi komunitas yang aktif dalam berbagai kegiatan gerejawi dan sosial. Melalui doa bersama, kunjungan kasih, perayaan liturgi, serta keterlibatan dalam kegiatan paroki, rukun ini menjadi tempat bagi umat untuk memperkuat tali persaudaraan dan menumbuhkan semangat pelayanan yang tulus. Nilai-nilai kerendahan hati, keikhlasan, dan cinta kasih yang diajarkan Santa Theresia menjadi dasar dalam setiap karya pelayanan yang dijalankan.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Kini, Rukun Santa Theresia terus berupaya menghadirkan wajah Gereja yang hidup di tengah umat Paroki Santo Mathias Saumlaki. Dengan dukungan seluruh anggota dan bimbingan para gembala, rukun ini berkomitmen untuk menjadi saluran berkat bagi sesama, menghadirkan sukacita Injil melalui tindakan nyata, serta meneladani Santa Theresia yang selalu berkata, <strong class="text-rose-700">"Melakukan hal-hal kecil dengan cinta yang besar."</strong>
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <!-- Vision Mission -->
+                    <div class="mt-20 grid md:grid-cols-2 gap-12">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-rose-200/30">
+                            <div class="text-center mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span class="text-white text-3xl">👁️</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Visi Kami</h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed text-center">
+                                Menjadi komunitas iman yang hidup dan bersaksi, mengikuti teladan Santa Theresia 
+                                dalam "Jalan Kecil" menuju kesucian, serta menjadi berkat bagi sesama dan lingkungan.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-blue-200/30">
+                            <div class="text-center mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span class="text-white text-3xl">🎯</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Misi Kami</h3>
+                            </div>
+                            <ul class="text-gray-700 space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Menumbuhkan spiritualitas melalui doa dan ibadah bersama
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Melayani sesama dengan kasih dan kerendahan hati
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Membangun persaudaraan yang erat dalam komunitas
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2 mt-1">•</span>
+                                    Meneladani hidup Santa Theresia dalam keseharian
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -1030,69 +1479,69 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-br from-amber-900 via-amber-800 to-orange-900 text-white py-20 relative overflow-hidden">
+    <footer class="bg-gradient-to-br from-amber-900 via-amber-800 to-orange-900 text-white py-12 sm:py-16 md:py-20 relative overflow-hidden">
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-10 right-10 text-6xl opacity-5 animate-pulse">🌹</div>
-            <div class="absolute bottom-20 left-10 text-5xl opacity-10 animate-bounce" style="animation-delay: 2s;">✨</div>
-            <div class="absolute top-1/2 left-1/4 text-4xl opacity-5 animate-pulse" style="animation-delay: 1s;">🙏</div>
+            <div class="absolute top-6 right-4 text-4xl sm:text-5xl md:text-6xl opacity-5 animate-pulse sm:top-10 sm:right-10">🌹</div>
+            <div class="absolute bottom-12 left-4 text-3xl sm:text-4xl md:text-5xl opacity-10 animate-bounce sm:bottom-20 sm:left-10" style="animation-delay: 2s;">✨</div>
+            <div class="absolute top-1/2 left-1/4 text-2xl sm:text-3xl md:text-4xl opacity-5 animate-pulse" style="animation-delay: 1s;">🙏</div>
         </div>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="text-center mb-16">
-                <div class="flex items-center justify-center mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-2xl mr-4">
-                        <span class="text-white text-3xl">🌹</span>
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative">
+            <div class="text-center mb-8 sm:mb-12 md:mb-16">
+                <div class="flex flex-col sm:flex-row items-center justify-center mb-4 sm:mb-6">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-2xl mb-3 sm:mb-0 sm:mr-4">
+                        <span class="text-white text-2xl sm:text-2xl md:text-3xl">🌹</span>
                     </div>
-                    <div class="text-left">
-                        <h3 class="text-3xl font-bold text-white">Rukun Santa Theresia</h3>
-                        <p class="text-amber-200 text-lg">Paroki Santo Mathias Saumlaki</p>
+                    <div class="text-center sm:text-left">
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white">Rukun Santa Theresia</h3>
+                        <p class="text-amber-200 text-sm sm:text-base md:text-lg">Paroki Santo Mathias Saumlaki</p>
                     </div>
                 </div>
                 
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto border border-amber-700/30 shadow-2xl">
-                    <p class="text-amber-200 text-lg italic leading-relaxed mb-3">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 max-w-3xl mx-auto border border-amber-700/30 shadow-2xl">
+                    <p class="text-amber-200 text-base sm:text-lg italic leading-relaxed mb-2 sm:mb-3">
                         "Aku akan menghabiskan surgaku dengan berbuat baik di bumi"
                     </p>
-                    <p class="text-amber-300 text-sm font-medium">- Santa Theresia dari Kanak-kanak Yesus</p>
+                    <p class="text-amber-300 text-xs sm:text-sm font-medium">- Santa Theresia dari Kanak-kanak Yesus</p>
                 </div>
             </div>
             
-            <div class="grid lg:grid-cols-3 gap-8 mb-16">
-                <div class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 md:mb-16">
+                <div class="space-y-4 sm:space-y-6 lg:col-span-1">
                     <div>
-                        <h4 class="text-xl font-semibold mb-4 flex items-center text-white">
-                            <span class="text-2xl mr-3">ℹ️</span>
+                        <h4 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 flex items-center text-white">
+                            <span class="text-xl sm:text-2xl mr-2 sm:mr-3">ℹ️</span>
                             Tentang Kami
                         </h4>
-                        <p class="text-amber-100 leading-relaxed">
+                        <p class="text-amber-100 leading-relaxed text-sm sm:text-base">
                             Komunitas iman yang bersatu dalam cinta kasih Kristus, mengikuti teladan Santa Theresia dari Kanak-kanak Yesus dalam "Jalan Kecil" menuju kesucian.
                         </p>
                     </div>
                     
                     <div>
-                        <h4 class="text-xl font-semibold mb-4 flex items-center text-white">
-                            <span class="text-2xl mr-3">🔗</span>
+                        <h4 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 flex items-center text-white">
+                            <span class="text-xl sm:text-2xl mr-2 sm:mr-3">🔗</span>
                             Navigasi
                         </h4>
-                        <div class="grid grid-cols-1 gap-3">
-                            <a href="#" onclick="showPage('beranda')" class="text-amber-100 hover:text-white transition duration-300 flex items-center group py-2">
-                                <span class="w-2 h-2 bg-amber-400 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
+                        <div class="grid grid-cols-1 gap-2 sm:gap-3">
+                            <a href="#" onclick="showPage('beranda')" class="text-amber-100 hover:text-white transition duration-300 flex items-center group py-1 sm:py-2 text-sm sm:text-base">
+                                <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-amber-400 rounded-full mr-2 sm:mr-3 group-hover:bg-white transition-colors duration-300"></span>
                                 Beranda
                             </a>
-                            <a href="#" onclick="showPage('tentang')" class="text-amber-100 hover:text-white transition duration-300 flex items-center group py-2">
-                                <span class="w-2 h-2 bg-amber-400 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
+                            <a href="#" onclick="showPage('tentang')" class="text-amber-100 hover:text-white transition duration-300 flex items-center group py-1 sm:py-2 text-sm sm:text-base">
+                                <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-amber-400 rounded-full mr-2 sm:mr-3 group-hover:bg-white transition-colors duration-300"></span>
                                 Tentang Kami
                             </a>
-                            <a href="#" onclick="showPage('jadwal')" class="text-amber-100 hover:text-white transition duration-300 flex items-center group py-2">
-                                <span class="w-2 h-2 bg-amber-400 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
+                            <a href="#" onclick="showPage('jadwal')" class="text-amber-100 hover:text-white transition duration-300 flex items-center group py-1 sm:py-2 text-sm sm:text-base">
+                                <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-amber-400 rounded-full mr-2 sm:mr-3 group-hover:bg-white transition-colors duration-300"></span>
                                 Jadwal Ibadah
                             </a>
-                            <a href="#" onclick="showPage('layanan')" class="text-amber-100 hover:text-white transition duration-300 flex items-center group py-2">
-                                <span class="w-2 h-2 bg-amber-400 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
+                            <a href="#" onclick="showPage('layanan')" class="text-amber-100 hover:text-white transition duration-300 flex items-center group py-1 sm:py-2 text-sm sm:text-base">
+                                <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-amber-400 rounded-full mr-2 sm:mr-3 group-hover:bg-white transition-colors duration-300"></span>
                                 Layanan
                             </a>
-                            <a href="#" onclick="showPage('kontak')" class="text-amber-100 hover:text-white transition duration-300 flex items-center group py-2">
-                                <span class="w-2 h-2 bg-amber-400 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
+                            <a href="#" onclick="showPage('kontak')" class="text-amber-100 hover:text-white transition duration-300 flex items-center group py-1 sm:py-2 text-sm sm:text-base">
+                                <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-amber-400 rounded-full mr-2 sm:mr-3 group-hover:bg-white transition-colors duration-300"></span>
                                 Kontak
                             </a>
                         </div>
@@ -1100,74 +1549,74 @@
                 </div>
                 
                 <div>
-                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-amber-700/20 shadow-xl">
-                        <h4 class="text-xl font-semibold mb-6 flex items-center text-white">
-                            <span class="text-2xl mr-3">📞</span>
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-amber-700/20 shadow-xl">
+                        <h4 class="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 flex items-center text-white">
+                            <span class="text-xl sm:text-2xl mr-2 sm:mr-3">📞</span>
                             Informasi Kontak
                         </h4>
-                        <div class="space-y-4">
+                        <div class="space-y-3 sm:space-y-4">
                             <div class="flex items-start">
-                                <div class="w-10 h-10 bg-amber-700/50 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                    <span class="text-amber-200 text-lg">📍</span>
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-700/50 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                                    <span class="text-amber-200 text-base sm:text-lg">📍</span>
                                 </div>
                                 <div>
-                                    <p class="text-amber-100 font-medium mb-1">Alamat</p>
-                                    <p class="text-amber-200 text-sm">Paroki Santo Mathias<br>Saumlaki, Maluku Tenggara Barat</p>
+                                    <p class="text-amber-100 font-medium mb-1 text-sm sm:text-base">Alamat</p>
+                                    <p class="text-amber-200 text-xs sm:text-sm">Paroki Santo Mathias<br>Saumlaki, Maluku Tenggara Barat</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="w-10 h-10 bg-amber-700/50 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                    <span class="text-amber-200 text-lg">📞</span>
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-700/50 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                                    <span class="text-amber-200 text-base sm:text-lg">📞</span>
                                 </div>
                                 <div>
-                                    <p class="text-amber-100 font-medium mb-1">Telepon</p>
-                                    <p class="text-amber-200 text-sm">+62 xxx-xxxx-xxxx</p>
+                                    <p class="text-amber-100 font-medium mb-1 text-sm sm:text-base">Telepon</p>
+                                    <p class="text-amber-200 text-xs sm:text-sm">+62 xxx-xxxx-xxxx</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="w-10 h-10 bg-amber-700/50 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                    <span class="text-amber-200 text-lg">✉️</span>
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-700/50 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                                    <span class="text-amber-200 text-base sm:text-lg">✉️</span>
                                 </div>
                                 <div>
-                                    <p class="text-amber-100 font-medium mb-1">Email</p>
-                                    <p class="text-amber-200 text-sm">santatheresiasaumlaki@gmail.com</p>
+                                    <p class="text-amber-100 font-medium mb-1 text-sm sm:text-base">Email</p>
+                                    <p class="text-amber-200 text-xs sm:text-sm break-all">santatheresiasaumlaki@gmail.com</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div>
-                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-amber-700/20 shadow-xl">
-                        <h4 class="text-xl font-semibold mb-6 flex items-center text-white">
-                            <span class="text-2xl mr-3">🗺️</span>
+                <div class="md:col-span-2 lg:col-span-1">
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-amber-700/20 shadow-xl">
+                        <h4 class="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 flex items-center text-white">
+                            <span class="text-xl sm:text-2xl mr-2 sm:mr-3">🗺️</span>
                             Lokasi Kami
                         </h4>
-                        <div class="space-y-4">
-                            <div class="relative rounded-xl overflow-hidden shadow-lg border-2 border-amber-700/30">
+                        <div class="space-y-3 sm:space-y-4">
+                            <div class="relative rounded-lg sm:rounded-xl overflow-hidden shadow-lg border-2 border-amber-700/30">
                                 <iframe 
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246..!2d131..!3d-7..!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d27550fe43a055f%3A0x157ffdba6308a137!2sRUKUN%20SANTA%20THERESIA!5e0!3m2!1sid!2sid!4v..!5m2!1sid!2sid" 
                                     width="100%" 
-                                    height="200" 
+                                    height="160" 
                                     style="border:0;" 
                                     loading="lazy" 
                                     referrerpolicy="no-referrer-when-downgrade"
-                                    class="w-full h-48 sm:h-56"
+                                    class="w-full h-40 sm:h-48 md:h-56"
                                 ></iframe>
                                 <div class="absolute inset-0 bg-gradient-to-t from-amber-900/20 to-transparent pointer-events-none"></div>
                             </div>
                             
                             <div class="text-center">
-                                <p class="text-amber-200 text-sm mb-3">
+                                <p class="text-amber-200 text-xs sm:text-sm mb-2 sm:mb-3">
                                     Kunjungi kami di Paroki Santo Mathias Saumlaki
                                 </p>
                                 <a 
                                     href="https://maps.google.com/?q=RUKUN+SANTA+THERESIA+Saumlaki" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center justify-center space-x-2 bg-amber-600/80 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform text-sm"
+                                    class="inline-flex items-center justify-center space-x-1 sm:space-x-2 bg-amber-600/80 hover:bg-amber-600 text-white font-medium py-2 px-3 sm:px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform text-xs sm:text-sm"
                                 >
                                     <span>🧭</span>
                                     <span>Buka di Google Maps</span>
@@ -1178,13 +1627,13 @@
                 </div>
             </div>
             
-            <div class="border-t border-amber-700/50 pt-8">
-                <div class="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-                    <div class="text-center lg:text-left">
-                        <p class="text-amber-200 font-medium">
+            <div class="border-t border-amber-700/50 pt-6 sm:pt-8">
+                <div class="flex flex-col items-center space-y-3 sm:space-y-4">
+                    <div class="text-center">
+                        <p class="text-amber-200 font-medium text-sm sm:text-base">
                             &copy; 2025 Rukun Santa Theresia - Paroki Santo Mathias Saumlaki
                         </p>
-                        <p class="text-amber-300 text-sm mt-1">
+                        <p class="text-amber-300 text-xs sm:text-sm mt-1">
                             Semua hak dilindungi. Dibuat dengan ❤️ untuk kemuliaan Tuhan
                         </p>
                     </div>
@@ -1403,57 +1852,379 @@ Terima kasih dan Tuhan memberkati! 🙏`;
             contentEl.classList.add('hidden');
             errorEl.classList.add('hidden');
             
-            // Simulate loading delay
-            setTimeout(() => {
-                try {
-                    // Sample data for jadwal ibadah
-                    jadwalData = [
-                        {
-                            tanggal: '2025-01-15',
-                            waktu: '19:00',
-                            tempat: 'Rumah Bpk. Petrus',
-                            pemimpin: 'Ibu Maria',
-                            kategori: 'Rosario'
-                        },
-                        {
-                            tanggal: '2025-01-20',
-                            waktu: '18:30',
-                            tempat: 'Gereja Santo Mathias',
-                            pemimpin: 'Bpk. Yohanes',
-                            kategori: 'Misa Rukun'
-                        },
-                        {
-                            tanggal: '2025-01-25',
-                            waktu: '19:30',
-                            tempat: 'Rumah Ibu Anna',
-                            pemimpin: 'Ibu Theresia',
-                            kategori: 'Pendalaman APP'
-                        },
-                        {
-                            tanggal: '2025-02-01',
-                            waktu: '19:00',
-                            tempat: 'Aula Paroki',
-                            pemimpin: 'Bpk. Markus',
-                            kategori: 'Bulan Maria'
-                        },
-                        {
-                            tanggal: '2025-02-08',
-                            waktu: '18:00',
-                            tempat: 'Rumah Bpk. Lukas',
-                            pemimpin: 'Ibu Elisabeth',
-                            kategori: 'Rosario'
-                        }
-                    ];
+            // Google Sheets CSV URL - URL yang Anda berikan
+            const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRSRRyYreHCXXuAXvr9DaTnevZgfO7Gv4thZ6txx2TJ_SUabpn1K1i1Pz2GJOnh9O7cWuoCEsiY0uxM/pub?gid=426833283&single=true&output=csv';
+            
+            console.log('🔄 Mengambil data dari Google Sheets...', csvUrl);
+            
+            // Fetch data from Google Sheets dengan cache busting dan CORS handling
+            const cacheBuster = new Date().getTime();
+            const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(csvUrl + '&_=' + cacheBuster)}`;
+            
+            fetch(proxyUrl)
+                .then(response => {
+                    console.log('📡 Response status:', response.status);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const csvText = data.contents;
+                    console.log('📄 CSV data received, length:', csvText.length);
+                    console.log('📄 First 200 chars:', csvText.substring(0, 200));
                     
-                    renderJadwal(jadwalData);
+                    // Parse CSV data
+                    jadwalData = parseCSVData(csvText);
+                    console.log('✅ Parsed data count:', jadwalData.length);
+                    
+                    if (jadwalData.length === 0) {
+                        // Try fallback with sample data if no data found
+                        console.log('⚠️ No data found, using sample data');
+                        jadwalData = getSampleJadwalData();
+                    }
+                    
+                    // Sort data by date (ascending - soonest first)
+                    jadwalData.sort((a, b) => {
+                        const dateA = new Date(a.tanggal);
+                        const dateB = new Date(b.tanggal);
+                        return dateA - dateB;
+                    });
+                    
+                    // Filter out past dates (hanya tampilkan jadwal hari ini dan ke depan)
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+                    const upcomingData = jadwalData.filter(item => {
+                        const itemDate = new Date(item.tanggal);
+                        return itemDate >= today;
+                    });
+                    
+                    console.log('📅 Upcoming events:', upcomingData.length);
+                    
+                    // Apply category filter if active
+                    const kategoriFilter = document.getElementById('kategori-filter').value;
+                    const filteredData = kategoriFilter ? 
+                        upcomingData.filter(item => item.kategori === kategoriFilter) : 
+                        upcomingData;
+                    
+                    renderJadwal(filteredData);
                     
                     loadingEl.classList.add('hidden');
                     contentEl.classList.remove('hidden');
-                } catch (error) {
-                    loadingEl.classList.add('hidden');
-                    errorEl.classList.remove('hidden');
+                    
+                    // Update last refresh time
+                    updateLastRefreshTime();
+                    
+                    // Show success message
+                    console.log('✅ Data berhasil dimuat dari Google Sheets');
+                })
+                .catch(error => {
+                    console.error('❌ Error loading jadwal data:', error);
+                    
+                    // Try direct fetch as fallback
+                    console.log('🔄 Trying direct fetch as fallback...');
+                    fetch(csvUrl + '&_=' + new Date().getTime())
+                        .then(response => response.text())
+                        .then(csvText => {
+                            jadwalData = parseCSVData(csvText);
+                            if (jadwalData.length === 0) {
+                                jadwalData = getSampleJadwalData();
+                            }
+                            
+                            const today = new Date();
+                            today.setHours(0, 0, 0, 0);
+                            const upcomingData = jadwalData.filter(item => {
+                                const itemDate = new Date(item.tanggal);
+                                return itemDate >= today;
+                            });
+                            
+                            const kategoriFilter = document.getElementById('kategori-filter').value;
+                            const filteredData = kategoriFilter ? 
+                                upcomingData.filter(item => item.kategori === kategoriFilter) : 
+                                upcomingData;
+                            
+                            renderJadwal(filteredData);
+                            loadingEl.classList.add('hidden');
+                            contentEl.classList.remove('hidden');
+                            updateLastRefreshTime();
+                            console.log('✅ Fallback fetch berhasil');
+                        })
+                        .catch(fallbackError => {
+                            console.error('❌ Fallback also failed:', fallbackError);
+                            // Use sample data as last resort
+                            jadwalData = getSampleJadwalData();
+                            renderJadwal(jadwalData);
+                            loadingEl.classList.add('hidden');
+                            contentEl.classList.remove('hidden');
+                            updateLastRefreshTime();
+                            
+                            // Show warning about using sample data
+                            const warningEl = document.createElement('div');
+                            warningEl.className = 'bg-yellow-100 border border-yellow-300 text-yellow-800 px-4 py-3 rounded-lg mb-4';
+                            warningEl.innerHTML = `
+                                <div class="flex items-center">
+                                    <span class="text-lg mr-2">⚠️</span>
+                                    <div>
+                                        <p class="font-semibold">Menggunakan Data Contoh</p>
+                                        <p class="text-sm">Tidak dapat terhubung ke database. Menampilkan jadwal contoh.</p>
+                                    </div>
+                                </div>
+                            `;
+                            contentEl.insertBefore(warningEl, contentEl.firstChild);
+                        });
+                });
+        }
+        
+        // Sample data function for fallback
+        function getSampleJadwalData() {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(today.getDate() + 1);
+            const nextWeek = new Date(today);
+            nextWeek.setDate(today.getDate() + 7);
+            const nextMonth = new Date(today);
+            nextMonth.setDate(today.getDate() + 14);
+            
+            return [
+                {
+                    timestamp: new Date().toISOString(),
+                    tanggal: tomorrow.toISOString().split('T')[0],
+                    waktu: '19:00',
+                    tempat: 'Gereja Santo Mathias',
+                    pemimpin: 'Rm. Pastor Paroki',
+                    kategori: 'Rosario'
+                },
+                {
+                    timestamp: new Date().toISOString(),
+                    tanggal: nextWeek.toISOString().split('T')[0],
+                    waktu: '18:30',
+                    tempat: 'Rumah Ibu Maria',
+                    pemimpin: 'Ketua Rukun',
+                    kategori: 'Bulan Maria'
+                },
+                {
+                    timestamp: new Date().toISOString(),
+                    tanggal: nextMonth.toISOString().split('T')[0],
+                    waktu: '07:00',
+                    tempat: 'Gereja Santo Mathias',
+                    pemimpin: 'Rm. Pastor Paroki',
+                    kategori: 'Misa Rukun'
                 }
-            }, 1000);
+            ];
+        }
+        
+        // Parse CSV data from Google Sheets
+        function parseCSVData(csvText) {
+            if (!csvText || csvText.trim() === '') {
+                console.log('❌ Empty CSV text');
+                return [];
+            }
+            
+            const lines = csvText.trim().split('\n');
+            const data = [];
+            
+            console.log('📊 Total lines in CSV:', lines.length);
+            if (lines.length > 0) {
+                console.log('📊 Header line:', lines[0]);
+            }
+            
+            // Skip header row (index 0) if it exists
+            const startIndex = lines.length > 1 ? 1 : 0;
+            
+            for (let i = startIndex; i < lines.length; i++) {
+                const line = lines[i];
+                if (!line || line.trim() === '') continue;
+                
+                console.log(`📝 Processing line ${i}:`, line);
+                
+                try {
+                    // Parse CSV line (handle commas within quotes)
+                    const columns = parseCSVLine(line);
+                    console.log(`📝 Parsed columns for line ${i}:`, columns);
+                    
+                    if (columns.length >= 3) { // Minimum required columns
+                        // Map columns: Timestamp, Tanggal, Waktu, Tempat Ibadah, Pemimpin Ibadah, Kategori
+                        const rawDate = columns[1] ? columns[1].trim() : '';
+                        const formattedDate = formatDateFromSheet(rawDate);
+                        
+                        const item = {
+                            timestamp: columns[0] ? columns[0].trim() : '',
+                            tanggal: formattedDate || rawDate, // Use raw date if formatting fails
+                            waktu: columns[2] ? columns[2].trim() : '',
+                            tempat: columns[3] ? columns[3].trim() : 'Lokasi belum ditentukan',
+                            pemimpin: columns[4] ? columns[4].trim() : 'Belum ditentukan',
+                            kategori: columns[5] ? columns[5].trim() : 'Lainnya'
+                        };
+                        
+                        console.log(`📅 Processed item ${i}:`, item);
+                        
+                        // Only add if minimum required fields are present
+                        if (item.tanggal && item.waktu) {
+                            data.push(item);
+                            console.log(`✅ Added item ${i} to data`);
+                        } else {
+                            console.log(`❌ Skipped item ${i} - missing required fields:`, {
+                                tanggal: !!item.tanggal,
+                                waktu: !!item.waktu
+                            });
+                        }
+                    } else {
+                        console.log(`❌ Skipped line ${i} - insufficient columns (${columns.length})`);
+                    }
+                } catch (error) {
+                    console.error(`❌ Error processing line ${i}:`, error);
+                    continue;
+                }
+            }
+            
+            console.log('📊 Final parsed data:', data);
+            return data;
+        }
+        
+        // Parse a single CSV line (handles commas within quotes)
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+            
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            
+            result.push(current.trim());
+            return result;
+        }
+        
+        // Format date from Google Sheets format to YYYY-MM-DD
+        function formatDateFromSheet(dateString) {
+            if (!dateString) {
+                console.log('❌ Empty date string');
+                return '';
+            }
+            
+            console.log('📅 Formatting date:', dateString);
+            
+            // Handle various date formats that might come from Google Sheets
+            try {
+                let date;
+                
+                // Remove any quotes that might be around the date
+                const cleanDateString = dateString.replace(/['"]/g, '').trim();
+                console.log('📅 Cleaned date string:', cleanDateString);
+                
+                // Try parsing as-is first (handles ISO format, etc.)
+                date = new Date(cleanDateString);
+                console.log('📅 Direct parse result:', date, 'Valid:', !isNaN(date.getTime()));
+                
+                // If invalid, try DD/MM/YYYY format
+                if (isNaN(date.getTime())) {
+                    const parts = cleanDateString.split('/');
+                    if (parts.length === 3) {
+                        // Assume DD/MM/YYYY format
+                        const day = parseInt(parts[0]);
+                        const month = parseInt(parts[1]) - 1; // Month is 0-indexed
+                        const year = parseInt(parts[2]);
+                        date = new Date(year, month, day);
+                        console.log('📅 DD/MM/YYYY parse result:', date, 'Valid:', !isNaN(date.getTime()));
+                    }
+                }
+                
+                // If still invalid, try DD-MM-YYYY format
+                if (isNaN(date.getTime())) {
+                    const parts = cleanDateString.split('-');
+                    if (parts.length === 3) {
+                        // Check if it's DD-MM-YYYY or YYYY-MM-DD
+                        if (parts[0].length === 4) {
+                            // YYYY-MM-DD format
+                            date = new Date(parts[0], parts[1] - 1, parts[2]);
+                        } else {
+                            // DD-MM-YYYY format
+                            date = new Date(parts[2], parts[1] - 1, parts[0]);
+                        }
+                        console.log('📅 DD-MM-YYYY parse result:', date, 'Valid:', !isNaN(date.getTime()));
+                    }
+                }
+                
+                // If still invalid, try MM/DD/YYYY format (US format)
+                if (isNaN(date.getTime())) {
+                    const parts = cleanDateString.split('/');
+                    if (parts.length === 3) {
+                        // Try MM/DD/YYYY format
+                        const month = parseInt(parts[0]) - 1;
+                        const day = parseInt(parts[1]);
+                        const year = parseInt(parts[2]);
+                        date = new Date(year, month, day);
+                        console.log('📅 MM/DD/YYYY parse result:', date, 'Valid:', !isNaN(date.getTime()));
+                    }
+                }
+                
+                // Return in YYYY-MM-DD format if valid
+                if (!isNaN(date.getTime())) {
+                    const formatted = date.toISOString().split('T')[0];
+                    console.log('✅ Successfully formatted date:', cleanDateString, '->', formatted);
+                    return formatted;
+                }
+            } catch (error) {
+                console.error('❌ Error parsing date:', dateString, error);
+            }
+            
+            console.log('❌ Failed to parse date, returning original:', dateString);
+            return dateString; // Return original if parsing fails
+        }
+        
+        // Handle jadwal loading errors
+        function handleJadwalError(error) {
+            console.error('Jadwal loading error:', error);
+            
+            // Try to load fallback data or show helpful error message
+            const errorEl = document.getElementById('jadwal-error');
+            const errorContent = errorEl.querySelector('p');
+            
+            if (error.message.includes('Failed to fetch') || error.message.includes('network')) {
+                errorContent.textContent = 'Tidak dapat terhubung ke database. Periksa koneksi internet Anda.';
+            } else if (error.message.includes('HTTP error')) {
+                errorContent.textContent = 'Terjadi kesalahan saat mengakses data jadwal. Silakan coba lagi nanti.';
+            } else {
+                errorContent.textContent = 'Terjadi kesalahan saat memuat jadwal ibadah. Silakan refresh halaman.';
+            }
+        }
+        
+        // Update last refresh time display
+        function updateLastRefreshTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('id-ID', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            
+            // Add or update refresh time indicator
+            let refreshIndicator = document.getElementById('refresh-time');
+            if (!refreshIndicator) {
+                refreshIndicator = document.createElement('div');
+                refreshIndicator.id = 'refresh-time';
+                refreshIndicator.className = 'text-xs text-gray-500 text-center mt-4';
+                document.getElementById('jadwal-content').appendChild(refreshIndicator);
+            }
+            
+            refreshIndicator.innerHTML = `
+                <div class="flex items-center justify-center space-x-2">
+                    <span class="text-green-500">●</span>
+                    <span>Data terakhir dimuat: ${timeString}</span>
+                    <button onclick="loadJadwalIbadah()" class="text-blue-600 hover:text-blue-800 underline ml-2">
+                        Refresh
+                    </button>
+                </div>
+            `;
         }
         
         function renderJadwal(data) {
@@ -1473,12 +2244,12 @@ Terima kasih dan Tuhan memberkati! 🙏`;
             // Desktop table
             desktopTbody.innerHTML = data.map((item, index) => `
                 <tr class="border-b border-gray-200 hover:bg-amber-50 transition-colors duration-200 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}">
-                    <td class="px-6 py-4 text-gray-900 font-medium">${formatTanggal(item.tanggal)}</td>
-                    <td class="px-6 py-4 text-gray-700">${item.waktu}</td>
-                    <td class="px-6 py-4 text-gray-700">${item.tempat}</td>
-                    <td class="px-6 py-4 text-gray-700">${item.pemimpin}</td>
-                    <td class="px-6 py-4">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${getKategoriColor(item.kategori)}">
+                    <td class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-gray-900 font-medium text-sm sm:text-base">${formatTanggal(item.tanggal)}</td>
+                    <td class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-gray-700 text-sm sm:text-base">${item.waktu}</td>
+                    <td class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-gray-700 text-sm sm:text-base">${item.tempat}</td>
+                    <td class="px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-gray-700 text-sm sm:text-base">${item.pemimpin}</td>
+                    <td class="px-3 sm:px-4 md:px-6 py-3 sm:py-4">
+                        <span class="inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs font-medium ${getKategoriColor(item.kategori)}">
                             ${item.kategori}
                         </span>
                     </td>
@@ -1487,24 +2258,24 @@ Terima kasih dan Tuhan memberkati! 🙏`;
             
             // Mobile cards
             mobileContainer.innerHTML = data.map(item => `
-                <div class="bg-white rounded-lg shadow-md p-6 mb-4 border border-gray-200">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-900">${formatTanggal(item.tanggal)}</h3>
-                            <p class="text-amber-600 font-medium">${item.waktu}</p>
+                <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-3 sm:mb-4 border border-gray-200">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 sm:mb-4">
+                        <div class="mb-2 sm:mb-0">
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 leading-tight">${formatTanggal(item.tanggal)}</h3>
+                            <p class="text-amber-600 font-medium text-sm sm:text-base">${item.waktu}</p>
                         </div>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${getKategoriColor(item.kategori)}">
+                        <span class="inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs font-medium ${getKategoriColor(item.kategori)} self-start">
                             ${item.kategori}
                         </span>
                     </div>
                     <div class="space-y-2">
-                        <div class="flex items-center text-gray-700">
-                            <span class="text-lg mr-2">📍</span>
-                            <span>${item.tempat}</span>
+                        <div class="flex items-start text-gray-700">
+                            <span class="text-base sm:text-lg mr-2 flex-shrink-0 mt-0.5">📍</span>
+                            <span class="text-sm sm:text-base leading-relaxed">${item.tempat}</span>
                         </div>
-                        <div class="flex items-center text-gray-700">
-                            <span class="text-lg mr-2">👤</span>
-                            <span>${item.pemimpin}</span>
+                        <div class="flex items-start text-gray-700">
+                            <span class="text-base sm:text-lg mr-2 flex-shrink-0 mt-0.5">👤</span>
+                            <span class="text-sm sm:text-base leading-relaxed">${item.pemimpin}</span>
                         </div>
                     </div>
                 </div>
@@ -1530,11 +2301,374 @@ Terima kasih dan Tuhan memberkati! 🙏`;
                 'Bulan Kitab Suci': 'bg-green-100 text-green-800',
                 'Pendalaman APP': 'bg-yellow-100 text-yellow-800',
                 'Ibadah Mingguan': 'bg-indigo-100 text-indigo-800',
-                'Misa Rukun': 'bg-amber-100 text-amber-800',
+                'Misa Rukun': 'bg-orange-100 text-orange-800',
                 'Lainnya': 'bg-gray-100 text-gray-800'
             };
             return colors[kategori] || 'bg-gray-100 text-gray-800';
         }
+        
+        // Smooth scrolling for anchor links
+        function smoothScrollTo(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+        
+        // Form validation helpers
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        function validatePhone(phone) {
+            const phoneRegex = /^(\+62|62|0)[0-9]{9,13}$/;
+            return phoneRegex.test(phone.replace(/\s+/g, ''));
+        }
+        
+        // Enhanced form validation
+        function validateContactForm(formData) {
+            const errors = [];
+            
+            if (!formData.get('nama') || formData.get('nama').trim().length < 2) {
+                errors.push('Nama lengkap harus diisi minimal 2 karakter');
+            }
+            
+            if (!formData.get('email') || !validateEmail(formData.get('email'))) {
+                errors.push('Email tidak valid');
+            }
+            
+            if (!formData.get('phone') || !validatePhone(formData.get('phone'))) {
+                errors.push('Nomor handphone tidak valid');
+            }
+            
+            if (!formData.get('subjek') || formData.get('subjek').trim().length < 3) {
+                errors.push('Subjek harus diisi minimal 3 karakter');
+            }
+            
+            if (!formData.get('pesan') || formData.get('pesan').trim().length < 10) {
+                errors.push('Pesan harus diisi minimal 10 karakter');
+            }
+            
+            return errors;
+        }
+        
+        function validateServiceForm(formData) {
+            const errors = [];
+            
+            if (!formData.get('nama-lengkap') || formData.get('nama-lengkap').trim().length < 2) {
+                errors.push('Nama lengkap harus diisi minimal 2 karakter');
+            }
+            
+            if (!formData.get('nomor-hp') || !validatePhone(formData.get('nomor-hp'))) {
+                errors.push('Nomor HP/WhatsApp tidak valid');
+            }
+            
+            if (!formData.get('alamat') || formData.get('alamat').trim().length < 5) {
+                errors.push('Alamat harus diisi minimal 5 karakter');
+            }
+            
+            if (!formData.get('jenis-layanan')) {
+                errors.push('Jenis layanan harus dipilih');
+            }
+            
+            return errors;
+        }
+        
+        // Enhanced contact form handler with validation
+        function handleContactForm(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const errors = validateContactForm(formData);
+            
+            if (errors.length > 0) {
+                showFormMessage('Mohon perbaiki: ' + errors.join(', '), 'error');
+                return;
+            }
+            
+            const nama = formData.get('nama').trim();
+            const email = formData.get('email').trim();
+            const phone = formData.get('phone').trim();
+            const subjek = formData.get('subjek').trim();
+            const pesan = formData.get('pesan').trim();
+            
+            // Create WhatsApp message
+            const whatsappMessage = `*PESAN DARI WEBSITE RUKUN SANTA THERESIA*
+
+Halo, saya ${nama}
+
+*Subjek:* ${subjek}
+
+*Informasi Kontak:*
+📧 Email: ${email}
+📱 No. HP: ${phone}
+
+*Pesan:*
+${pesan}
+
+Terima kasih dan Tuhan memberkati! 🙏`;
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // WhatsApp URL (ganti dengan nomor yang benar)
+            const whatsappURL = `https://wa.me/6281234567890?text=${encodedMessage}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+            
+            // Show success message
+            showFormMessage('Pesan berhasil disiapkan! Anda akan diarahkan ke WhatsApp.', 'success');
+            
+            // Reset form
+            event.target.reset();
+        }
+        
+        // Enhanced service form handler with validation
+        function handleServiceForm(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const errors = validateServiceForm(formData);
+            
+            if (errors.length > 0) {
+                showServiceFormMessage('Mohon perbaiki: ' + errors.join(', '), 'error');
+                return;
+            }
+            
+            const namaLengkap = formData.get('nama-lengkap').trim();
+            const nomorHp = formData.get('nomor-hp').trim();
+            const alamat = formData.get('alamat').trim();
+            const jenisLayanan = formData.get('jenis-layanan');
+            const pesanKeterangan = formData.get('pesan-keterangan').trim();
+            
+            // Create WhatsApp message
+            const whatsappMessage = `*FORMULIR LAYANAN RUKUN SANTA THERESIA*
+
+Halo, saya ingin mengajukan permohonan layanan:
+
+*Data Pemohon:*
+👤 Nama: ${namaLengkap}
+📱 HP/WhatsApp: ${nomorHp}
+🏠 Alamat: ${alamat}
+
+*Layanan yang Diminta:*
+🛐 Jenis: ${jenisLayanan}
+
+${pesanKeterangan ? `*Keterangan Tambahan:*\n${pesanKeterangan}\n` : ''}
+Mohon bantuan dan bimbingannya.
+
+Terima kasih dan Tuhan memberkati! 🙏🌹`;
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // WhatsApp URL (ganti dengan nomor yang benar)
+            const whatsappURL = `https://wa.me/6281234567890?text=${encodedMessage}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+            
+            // Show success notification
+            showSuccessNotification();
+            
+            // Show success message
+            showServiceFormMessage('Formulir berhasil disiapkan! Anda akan diarahkan ke WhatsApp.', 'success');
+            
+            // Reset form
+            event.target.reset();
+        }
+        
+        function showServiceFormMessage(message, type) {
+            const messageEl = document.getElementById('service-form-message');
+            messageEl.innerHTML = `
+                <div class="p-4 rounded-xl ${type === 'success' ? 'bg-green-100 text-green-800 border border-green-200' : 'bg-red-100 text-red-800 border border-red-200'}">
+                    <div class="flex items-center">
+                        <span class="text-lg mr-2">${type === 'success' ? '✅' : '⚠️'}</span>
+                        <span class="font-medium">${message}</span>
+                    </div>
+                </div>
+            `;
+            messageEl.classList.remove('hidden');
+            
+            setTimeout(() => {
+                messageEl.classList.add('hidden');
+            }, 5000);
+        }
+        
+        // Enhanced notification system
+        function showSuccessNotification() {
+            const notification = document.getElementById('success-notification');
+            notification.classList.remove('hidden');
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 5000);
+            
+            // Add click to close functionality
+            notification.addEventListener('click', function() {
+                this.classList.add('hidden');
+            });
+        }
+        
+        // Keyboard navigation support
+        document.addEventListener('keydown', function(event) {
+            // ESC key to close mobile menu
+            if (event.key === 'Escape') {
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMobileMenu();
+                }
+            }
+            
+            // Enter key on navigation links
+            if (event.key === 'Enter' && event.target.classList.contains('nav-link')) {
+                event.target.click();
+            }
+        });
+        
+        // Enhanced mobile menu with better UX
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            
+            mobileMenu.classList.toggle('hidden');
+            
+            // Update button icon
+            const icon = menuBtn.querySelector('svg path');
+            if (mobileMenu.classList.contains('hidden')) {
+                // Hamburger icon
+                icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                // Close icon
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        }
+        
+        // Auto-close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            
+            if (!mobileMenu.classList.contains('hidden') && 
+                !mobileMenu.contains(event.target) && 
+                !menuBtn.contains(event.target)) {
+                toggleMobileMenu();
+            }
+        });
+        
+        // Loading state management
+        function setLoadingState(elementId, isLoading) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                if (isLoading) {
+                    element.style.opacity = '0.6';
+                    element.style.pointerEvents = 'none';
+                } else {
+                    element.style.opacity = '1';
+                    element.style.pointerEvents = 'auto';
+                }
+            }
+        }
+        
+        // Enhanced error handling
+        function handleError(error, context = '') {
+            console.error(`Error in ${context}:`, error);
+            
+            // Show user-friendly error message
+            const errorMessage = `Terjadi kesalahan${context ? ` saat ${context}` : ''}. Silakan coba lagi atau hubungi kami jika masalah berlanjut.`;
+            
+            // You can customize this to show errors in different ways
+            if (context.includes('form')) {
+                showFormMessage(errorMessage, 'error');
+            } else {
+                // Show general error notification
+                console.warn('General error:', errorMessage);
+            }
+        }
+        
+        // Performance optimization: Debounce function
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+        
+        // Optimized scroll handler
+        const handleScroll = debounce(function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-2xl');
+            } else {
+                navbar.classList.remove('shadow-2xl');
+            }
+        }, 10);
+        
+        window.addEventListener('scroll', handleScroll);
+        
+        // Accessibility improvements
+        function initAccessibility() {
+            // Add focus indicators for keyboard navigation
+            const focusableElements = document.querySelectorAll('button, a, input, textarea, select');
+            
+            focusableElements.forEach(element => {
+                element.addEventListener('focus', function() {
+                    this.style.outline = '2px solid #3B82F6';
+                    this.style.outlineOffset = '2px';
+                });
+                
+                element.addEventListener('blur', function() {
+                    this.style.outline = 'none';
+                });
+            });
+        }
+        
+        // Initialize accessibility features
+        document.addEventListener('DOMContentLoaded', function() {
+            initAccessibility();
+        });
+        
+        // Service Worker registration for better performance (optional)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                // You can add service worker registration here if needed
+                console.log('Service Worker support detected');
+            });
+        }
+        
+        // Print functionality
+        function printPage() {
+            window.print();
+        }
+        
+        // Share functionality (if Web Share API is supported)
+        function shareWebsite() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Rukun Santa Theresia - Paroki Santo Mathias Saumlaki',
+                    text: 'Bergabunglah dengan komunitas iman Rukun Santa Theresia',
+                    url: window.location.href
+                }).catch(console.error);
+            } else {
+                // Fallback: copy URL to clipboard
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('Link website telah disalin ke clipboard!');
+                }).catch(() => {
+                    alert('Tidak dapat menyalin link. Silakan salin manual: ' + window.location.href);
+                });
+            }
+        }
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e7351fb7a79c7d',t:'MTc2MDQ0NjI3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98eb5c3f311e55de',t:'MTc2MDQ4OTgyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
